@@ -1,0 +1,1183 @@
+logger=settings t=2023-10-23T02:08:22.95-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T02:08:22.95-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T02:08:22.95-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T02:08:22.95-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T02:08:22.95-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T02:08:22.95-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T02:08:22.95-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T02:08:22.95-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T02:08:22.95-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=sqlstore t=2023-10-23T02:08:22.95-0700 lvl=info msg="Creating SQLite database file" path=/var/www/grafana/grafana-8.5.27/data/grafana.db
+logger=migrator t=2023-10-23T02:08:22.97-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T02:08:22.97-0700 lvl=info msg="Executing migration" id="create migration_log table"
+logger=migrator t=2023-10-23T02:08:22.98-0700 lvl=info msg="Executing migration" id="create user table"
+logger=migrator t=2023-10-23T02:08:22.99-0700 lvl=info msg="Executing migration" id="add unique index user.login"
+logger=migrator t=2023-10-23T02:08:23-0700 lvl=info msg="Executing migration" id="add unique index user.email"
+logger=migrator t=2023-10-23T02:08:23-0700 lvl=info msg="Executing migration" id="drop index UQE_user_login - v1"
+logger=migrator t=2023-10-23T02:08:23.01-0700 lvl=info msg="Executing migration" id="drop index UQE_user_email - v1"
+logger=migrator t=2023-10-23T02:08:23.02-0700 lvl=info msg="Executing migration" id="Rename table user to user_v1 - v1"
+logger=migrator t=2023-10-23T02:08:23.04-0700 lvl=info msg="Executing migration" id="create user table v2"
+logger=migrator t=2023-10-23T02:08:23.04-0700 lvl=info msg="Executing migration" id="create index UQE_user_login - v2"
+logger=migrator t=2023-10-23T02:08:23.05-0700 lvl=info msg="Executing migration" id="create index UQE_user_email - v2"
+logger=migrator t=2023-10-23T02:08:23.05-0700 lvl=info msg="Executing migration" id="copy data_source v1 to v2"
+logger=migrator t=2023-10-23T02:08:23.06-0700 lvl=info msg="Executing migration" id="Drop old table user_v1"
+logger=migrator t=2023-10-23T02:08:23.06-0700 lvl=info msg="Executing migration" id="Add column help_flags1 to user table"
+logger=migrator t=2023-10-23T02:08:23.07-0700 lvl=info msg="Executing migration" id="Update user table charset"
+logger=migrator t=2023-10-23T02:08:23.08-0700 lvl=info msg="Executing migration" id="Add last_seen_at column to user"
+logger=migrator t=2023-10-23T02:08:23.08-0700 lvl=info msg="Executing migration" id="Add missing user data"
+logger=migrator t=2023-10-23T02:08:23.09-0700 lvl=info msg="Executing migration" id="Add is_disabled column to user"
+logger=migrator t=2023-10-23T02:08:23.1-0700 lvl=info msg="Executing migration" id="Add index user.login/user.email"
+logger=migrator t=2023-10-23T02:08:23.1-0700 lvl=info msg="Executing migration" id="Add is_service_account column to user"
+logger=migrator t=2023-10-23T02:08:23.11-0700 lvl=info msg="Executing migration" id="Update is_service_account column to nullable"
+logger=migrator t=2023-10-23T02:08:23.12-0700 lvl=info msg="Executing migration" id="create temp user table v1-7"
+logger=migrator t=2023-10-23T02:08:23.13-0700 lvl=info msg="Executing migration" id="create index IDX_temp_user_email - v1-7"
+logger=migrator t=2023-10-23T02:08:23.14-0700 lvl=info msg="Executing migration" id="create index IDX_temp_user_org_id - v1-7"
+logger=migrator t=2023-10-23T02:08:23.14-0700 lvl=info msg="Executing migration" id="create index IDX_temp_user_code - v1-7"
+logger=migrator t=2023-10-23T02:08:23.15-0700 lvl=info msg="Executing migration" id="create index IDX_temp_user_status - v1-7"
+logger=migrator t=2023-10-23T02:08:23.15-0700 lvl=info msg="Executing migration" id="Update temp_user table charset"
+logger=migrator t=2023-10-23T02:08:23.16-0700 lvl=info msg="Executing migration" id="drop index IDX_temp_user_email - v1"
+logger=migrator t=2023-10-23T02:08:23.16-0700 lvl=info msg="Executing migration" id="drop index IDX_temp_user_org_id - v1"
+logger=migrator t=2023-10-23T02:08:23.16-0700 lvl=info msg="Executing migration" id="drop index IDX_temp_user_code - v1"
+logger=migrator t=2023-10-23T02:08:23.17-0700 lvl=info msg="Executing migration" id="drop index IDX_temp_user_status - v1"
+logger=migrator t=2023-10-23T02:08:23.17-0700 lvl=info msg="Executing migration" id="Rename table temp_user to temp_user_tmp_qwerty - v1"
+logger=migrator t=2023-10-23T02:08:23.18-0700 lvl=info msg="Executing migration" id="create temp_user v2"
+logger=migrator t=2023-10-23T02:08:23.18-0700 lvl=info msg="Executing migration" id="create index IDX_temp_user_email - v2"
+logger=migrator t=2023-10-23T02:08:23.18-0700 lvl=info msg="Executing migration" id="create index IDX_temp_user_org_id - v2"
+logger=migrator t=2023-10-23T02:08:23.19-0700 lvl=info msg="Executing migration" id="create index IDX_temp_user_code - v2"
+logger=migrator t=2023-10-23T02:08:23.19-0700 lvl=info msg="Executing migration" id="create index IDX_temp_user_status - v2"
+logger=migrator t=2023-10-23T02:08:23.19-0700 lvl=info msg="Executing migration" id="copy temp_user v1 to v2"
+logger=migrator t=2023-10-23T02:08:23.2-0700 lvl=info msg="Executing migration" id="drop temp_user_tmp_qwerty"
+logger=migrator t=2023-10-23T02:08:23.2-0700 lvl=info msg="Executing migration" id="Set created for temp users that will otherwise prematurely expire"
+logger=migrator t=2023-10-23T02:08:23.21-0700 lvl=info msg="Executing migration" id="create star table"
+logger=migrator t=2023-10-23T02:08:23.21-0700 lvl=info msg="Executing migration" id="add unique index star.user_id_dashboard_id"
+logger=migrator t=2023-10-23T02:08:23.21-0700 lvl=info msg="Executing migration" id="create org table v1"
+logger=migrator t=2023-10-23T02:08:23.21-0700 lvl=info msg="Executing migration" id="create index UQE_org_name - v1"
+logger=migrator t=2023-10-23T02:08:23.22-0700 lvl=info msg="Executing migration" id="create org_user table v1"
+logger=migrator t=2023-10-23T02:08:23.22-0700 lvl=info msg="Executing migration" id="create index IDX_org_user_org_id - v1"
+logger=migrator t=2023-10-23T02:08:23.22-0700 lvl=info msg="Executing migration" id="create index UQE_org_user_org_id_user_id - v1"
+logger=migrator t=2023-10-23T02:08:23.22-0700 lvl=info msg="Executing migration" id="create index IDX_org_user_user_id - v1"
+logger=migrator t=2023-10-23T02:08:23.23-0700 lvl=info msg="Executing migration" id="Update org table charset"
+logger=migrator t=2023-10-23T02:08:23.23-0700 lvl=info msg="Executing migration" id="Update org_user table charset"
+logger=migrator t=2023-10-23T02:08:23.23-0700 lvl=info msg="Executing migration" id="Migrate all Read Only Viewers to Viewers"
+logger=migrator t=2023-10-23T02:08:23.23-0700 lvl=info msg="Executing migration" id="create dashboard table"
+logger=migrator t=2023-10-23T02:08:23.24-0700 lvl=info msg="Executing migration" id="add index dashboard.account_id"
+logger=migrator t=2023-10-23T02:08:23.24-0700 lvl=info msg="Executing migration" id="add unique index dashboard_account_id_slug"
+logger=migrator t=2023-10-23T02:08:23.24-0700 lvl=info msg="Executing migration" id="create dashboard_tag table"
+logger=migrator t=2023-10-23T02:08:23.25-0700 lvl=info msg="Executing migration" id="add unique index dashboard_tag.dasboard_id_term"
+logger=migrator t=2023-10-23T02:08:23.25-0700 lvl=info msg="Executing migration" id="drop index UQE_dashboard_tag_dashboard_id_term - v1"
+logger=migrator t=2023-10-23T02:08:23.25-0700 lvl=info msg="Executing migration" id="Rename table dashboard to dashboard_v1 - v1"
+logger=migrator t=2023-10-23T02:08:23.26-0700 lvl=info msg="Executing migration" id="create dashboard v2"
+logger=migrator t=2023-10-23T02:08:23.26-0700 lvl=info msg="Executing migration" id="create index IDX_dashboard_org_id - v2"
+logger=migrator t=2023-10-23T02:08:23.27-0700 lvl=info msg="Executing migration" id="create index UQE_dashboard_org_id_slug - v2"
+logger=migrator t=2023-10-23T02:08:23.27-0700 lvl=info msg="Executing migration" id="copy dashboard v1 to v2"
+logger=migrator t=2023-10-23T02:08:23.27-0700 lvl=info msg="Executing migration" id="drop table dashboard_v1"
+logger=migrator t=2023-10-23T02:08:23.28-0700 lvl=info msg="Executing migration" id="alter dashboard.data to mediumtext v1"
+logger=migrator t=2023-10-23T02:08:23.28-0700 lvl=info msg="Executing migration" id="Add column updated_by in dashboard - v2"
+logger=migrator t=2023-10-23T02:08:23.29-0700 lvl=info msg="Executing migration" id="Add column created_by in dashboard - v2"
+logger=migrator t=2023-10-23T02:08:23.29-0700 lvl=info msg="Executing migration" id="Add column gnetId in dashboard"
+logger=migrator t=2023-10-23T02:08:23.3-0700 lvl=info msg="Executing migration" id="Add index for gnetId in dashboard"
+logger=migrator t=2023-10-23T02:08:23.3-0700 lvl=info msg="Executing migration" id="Add column plugin_id in dashboard"
+logger=migrator t=2023-10-23T02:08:23.32-0700 lvl=info msg="Executing migration" id="Add index for plugin_id in dashboard"
+logger=migrator t=2023-10-23T02:08:23.32-0700 lvl=info msg="Executing migration" id="Add index for dashboard_id in dashboard_tag"
+logger=migrator t=2023-10-23T02:08:23.32-0700 lvl=info msg="Executing migration" id="Update dashboard table charset"
+logger=migrator t=2023-10-23T02:08:23.33-0700 lvl=info msg="Executing migration" id="Update dashboard_tag table charset"
+logger=migrator t=2023-10-23T02:08:23.33-0700 lvl=info msg="Executing migration" id="Add column folder_id in dashboard"
+logger=migrator t=2023-10-23T02:08:23.33-0700 lvl=info msg="Executing migration" id="Add column isFolder in dashboard"
+logger=migrator t=2023-10-23T02:08:23.34-0700 lvl=info msg="Executing migration" id="Add column has_acl in dashboard"
+logger=migrator t=2023-10-23T02:08:23.34-0700 lvl=info msg="Executing migration" id="Add column uid in dashboard"
+logger=migrator t=2023-10-23T02:08:23.35-0700 lvl=info msg="Executing migration" id="Update uid column values in dashboard"
+logger=migrator t=2023-10-23T02:08:23.35-0700 lvl=info msg="Executing migration" id="Add unique index dashboard_org_id_uid"
+logger=migrator t=2023-10-23T02:08:23.36-0700 lvl=info msg="Executing migration" id="Remove unique index org_id_slug"
+logger=migrator t=2023-10-23T02:08:23.36-0700 lvl=info msg="Executing migration" id="Update dashboard title length"
+logger=migrator t=2023-10-23T02:08:23.36-0700 lvl=info msg="Executing migration" id="Add unique index for dashboard_org_id_title_folder_id"
+logger=migrator t=2023-10-23T02:08:23.37-0700 lvl=info msg="Executing migration" id="create dashboard_provisioning"
+logger=migrator t=2023-10-23T02:08:23.37-0700 lvl=info msg="Executing migration" id="Rename table dashboard_provisioning to dashboard_provisioning_tmp_qwerty - v1"
+logger=migrator t=2023-10-23T02:08:23.38-0700 lvl=info msg="Executing migration" id="create dashboard_provisioning v2"
+logger=migrator t=2023-10-23T02:08:23.38-0700 lvl=info msg="Executing migration" id="create index IDX_dashboard_provisioning_dashboard_id - v2"
+logger=migrator t=2023-10-23T02:08:23.39-0700 lvl=info msg="Executing migration" id="create index IDX_dashboard_provisioning_dashboard_id_name - v2"
+logger=migrator t=2023-10-23T02:08:23.4-0700 lvl=info msg="Executing migration" id="copy dashboard_provisioning v1 to v2"
+logger=migrator t=2023-10-23T02:08:23.4-0700 lvl=info msg="Executing migration" id="drop dashboard_provisioning_tmp_qwerty"
+logger=migrator t=2023-10-23T02:08:23.41-0700 lvl=info msg="Executing migration" id="Add check_sum column"
+logger=migrator t=2023-10-23T02:08:23.41-0700 lvl=info msg="Executing migration" id="Add index for dashboard_title"
+logger=migrator t=2023-10-23T02:08:23.42-0700 lvl=info msg="Executing migration" id="delete tags for deleted dashboards"
+logger=migrator t=2023-10-23T02:08:23.43-0700 lvl=info msg="Executing migration" id="delete stars for deleted dashboards"
+logger=migrator t=2023-10-23T02:08:23.44-0700 lvl=info msg="Executing migration" id="Add index for dashboard_is_folder"
+logger=migrator t=2023-10-23T02:08:23.44-0700 lvl=info msg="Executing migration" id="create data_source table"
+logger=migrator t=2023-10-23T02:08:23.45-0700 lvl=info msg="Executing migration" id="add index data_source.account_id"
+logger=migrator t=2023-10-23T02:08:23.46-0700 lvl=info msg="Executing migration" id="add unique index data_source.account_id_name"
+logger=migrator t=2023-10-23T02:08:23.47-0700 lvl=info msg="Executing migration" id="drop index IDX_data_source_account_id - v1"
+logger=migrator t=2023-10-23T02:08:23.47-0700 lvl=info msg="Executing migration" id="drop index UQE_data_source_account_id_name - v1"
+logger=migrator t=2023-10-23T02:08:23.48-0700 lvl=info msg="Executing migration" id="Rename table data_source to data_source_v1 - v1"
+logger=migrator t=2023-10-23T02:08:23.49-0700 lvl=info msg="Executing migration" id="create data_source table v2"
+logger=migrator t=2023-10-23T02:08:23.49-0700 lvl=info msg="Executing migration" id="create index IDX_data_source_org_id - v2"
+logger=migrator t=2023-10-23T02:08:23.5-0700 lvl=info msg="Executing migration" id="create index UQE_data_source_org_id_name - v2"
+logger=migrator t=2023-10-23T02:08:23.5-0700 lvl=info msg="Executing migration" id="copy data_source v1 to v2"
+logger=migrator t=2023-10-23T02:08:23.51-0700 lvl=info msg="Executing migration" id="Drop old table data_source_v1 #2"
+logger=migrator t=2023-10-23T02:08:23.51-0700 lvl=info msg="Executing migration" id="Add column with_credentials"
+logger=migrator t=2023-10-23T02:08:23.52-0700 lvl=info msg="Executing migration" id="Add secure json data column"
+logger=migrator t=2023-10-23T02:08:23.52-0700 lvl=info msg="Executing migration" id="Update data_source table charset"
+logger=migrator t=2023-10-23T02:08:23.53-0700 lvl=info msg="Executing migration" id="Update initial version to 1"
+logger=migrator t=2023-10-23T02:08:23.53-0700 lvl=info msg="Executing migration" id="Add read_only data column"
+logger=migrator t=2023-10-23T02:08:23.54-0700 lvl=info msg="Executing migration" id="Migrate logging ds to loki ds"
+logger=migrator t=2023-10-23T02:08:23.55-0700 lvl=info msg="Executing migration" id="Update json_data with nulls"
+logger=migrator t=2023-10-23T02:08:23.56-0700 lvl=info msg="Executing migration" id="Add uid column"
+logger=migrator t=2023-10-23T02:08:23.57-0700 lvl=info msg="Executing migration" id="Update uid value"
+logger=migrator t=2023-10-23T02:08:23.57-0700 lvl=info msg="Executing migration" id="Add unique index datasource_org_id_uid"
+logger=migrator t=2023-10-23T02:08:23.58-0700 lvl=info msg="Executing migration" id="add unique index datasource_org_id_is_default"
+logger=migrator t=2023-10-23T02:08:23.58-0700 lvl=info msg="Executing migration" id="create api_key table"
+logger=migrator t=2023-10-23T02:08:23.59-0700 lvl=info msg="Executing migration" id="add index api_key.account_id"
+logger=migrator t=2023-10-23T02:08:23.59-0700 lvl=info msg="Executing migration" id="add index api_key.key"
+logger=migrator t=2023-10-23T02:08:23.6-0700 lvl=info msg="Executing migration" id="add index api_key.account_id_name"
+logger=migrator t=2023-10-23T02:08:23.61-0700 lvl=info msg="Executing migration" id="drop index IDX_api_key_account_id - v1"
+logger=migrator t=2023-10-23T02:08:23.61-0700 lvl=info msg="Executing migration" id="drop index UQE_api_key_key - v1"
+logger=migrator t=2023-10-23T02:08:23.62-0700 lvl=info msg="Executing migration" id="drop index UQE_api_key_account_id_name - v1"
+logger=migrator t=2023-10-23T02:08:23.63-0700 lvl=info msg="Executing migration" id="Rename table api_key to api_key_v1 - v1"
+logger=migrator t=2023-10-23T02:08:23.64-0700 lvl=info msg="Executing migration" id="create api_key table v2"
+logger=migrator t=2023-10-23T02:08:23.65-0700 lvl=info msg="Executing migration" id="create index IDX_api_key_org_id - v2"
+logger=migrator t=2023-10-23T02:08:23.66-0700 lvl=info msg="Executing migration" id="create index UQE_api_key_key - v2"
+logger=migrator t=2023-10-23T02:08:23.66-0700 lvl=info msg="Executing migration" id="create index UQE_api_key_org_id_name - v2"
+logger=migrator t=2023-10-23T02:08:23.67-0700 lvl=info msg="Executing migration" id="copy api_key v1 to v2"
+logger=migrator t=2023-10-23T02:08:23.67-0700 lvl=info msg="Executing migration" id="Drop old table api_key_v1"
+logger=migrator t=2023-10-23T02:08:23.68-0700 lvl=info msg="Executing migration" id="Update api_key table charset"
+logger=migrator t=2023-10-23T02:08:23.69-0700 lvl=info msg="Executing migration" id="Add expires to api_key table"
+logger=migrator t=2023-10-23T02:08:23.69-0700 lvl=info msg="Executing migration" id="Add service account foreign key"
+logger=migrator t=2023-10-23T02:08:23.7-0700 lvl=info msg="Executing migration" id="set service account foreign key to nil if 0"
+logger=migrator t=2023-10-23T02:08:23.72-0700 lvl=info msg="Executing migration" id="create dashboard_snapshot table v4"
+logger=migrator t=2023-10-23T02:08:23.72-0700 lvl=info msg="Executing migration" id="drop table dashboard_snapshot_v4 #1"
+logger=migrator t=2023-10-23T02:08:23.73-0700 lvl=info msg="Executing migration" id="create dashboard_snapshot table v5 #2"
+logger=migrator t=2023-10-23T02:08:23.74-0700 lvl=info msg="Executing migration" id="create index UQE_dashboard_snapshot_key - v5"
+logger=migrator t=2023-10-23T02:08:23.74-0700 lvl=info msg="Executing migration" id="create index UQE_dashboard_snapshot_delete_key - v5"
+logger=migrator t=2023-10-23T02:08:23.75-0700 lvl=info msg="Executing migration" id="create index IDX_dashboard_snapshot_user_id - v5"
+logger=migrator t=2023-10-23T02:08:23.76-0700 lvl=info msg="Executing migration" id="alter dashboard_snapshot to mediumtext v2"
+logger=migrator t=2023-10-23T02:08:23.77-0700 lvl=info msg="Executing migration" id="Update dashboard_snapshot table charset"
+logger=migrator t=2023-10-23T02:08:23.78-0700 lvl=info msg="Executing migration" id="Add column external_delete_url to dashboard_snapshots table"
+logger=migrator t=2023-10-23T02:08:23.79-0700 lvl=info msg="Executing migration" id="Add encrypted dashboard json column"
+logger=migrator t=2023-10-23T02:08:23.79-0700 lvl=info msg="Executing migration" id="Change dashboard_encrypted column to MEDIUMBLOB"
+logger=migrator t=2023-10-23T02:08:23.8-0700 lvl=info msg="Executing migration" id="create quota table v1"
+logger=migrator t=2023-10-23T02:08:23.8-0700 lvl=info msg="Executing migration" id="create index UQE_quota_org_id_user_id_target - v1"
+logger=migrator t=2023-10-23T02:08:23.81-0700 lvl=info msg="Executing migration" id="Update quota table charset"
+logger=migrator t=2023-10-23T02:08:23.81-0700 lvl=info msg="Executing migration" id="create plugin_setting table"
+logger=migrator t=2023-10-23T02:08:23.82-0700 lvl=info msg="Executing migration" id="create index UQE_plugin_setting_org_id_plugin_id - v1"
+logger=migrator t=2023-10-23T02:08:23.82-0700 lvl=info msg="Executing migration" id="Add column plugin_version to plugin_settings"
+logger=migrator t=2023-10-23T02:08:23.83-0700 lvl=info msg="Executing migration" id="Update plugin_setting table charset"
+logger=migrator t=2023-10-23T02:08:23.83-0700 lvl=info msg="Executing migration" id="create session table"
+logger=migrator t=2023-10-23T02:08:23.84-0700 lvl=info msg="Executing migration" id="Drop old table playlist table"
+logger=migrator t=2023-10-23T02:08:23.85-0700 lvl=info msg="Executing migration" id="Drop old table playlist_item table"
+logger=migrator t=2023-10-23T02:08:23.85-0700 lvl=info msg="Executing migration" id="create playlist table v2"
+logger=migrator t=2023-10-23T02:08:23.86-0700 lvl=info msg="Executing migration" id="create playlist item table v2"
+logger=migrator t=2023-10-23T02:08:23.86-0700 lvl=info msg="Executing migration" id="Update playlist table charset"
+logger=migrator t=2023-10-23T02:08:23.87-0700 lvl=info msg="Executing migration" id="Update playlist_item table charset"
+logger=migrator t=2023-10-23T02:08:23.87-0700 lvl=info msg="Executing migration" id="drop preferences table v2"
+logger=migrator t=2023-10-23T02:08:23.87-0700 lvl=info msg="Executing migration" id="drop preferences table v3"
+logger=migrator t=2023-10-23T02:08:23.87-0700 lvl=info msg="Executing migration" id="create preferences table v3"
+logger=migrator t=2023-10-23T02:08:23.88-0700 lvl=info msg="Executing migration" id="Update preferences table charset"
+logger=migrator t=2023-10-23T02:08:23.88-0700 lvl=info msg="Executing migration" id="Add column team_id in preferences"
+logger=migrator t=2023-10-23T02:08:23.89-0700 lvl=info msg="Executing migration" id="Update team_id column values in preferences"
+logger=migrator t=2023-10-23T02:08:23.89-0700 lvl=info msg="Executing migration" id="Add column week_start in preferences"
+logger=migrator t=2023-10-23T02:08:23.9-0700 lvl=info msg="Executing migration" id="Add column preferences.json_data"
+logger=migrator t=2023-10-23T02:08:23.9-0700 lvl=info msg="Executing migration" id="alter preferences.json_data to mediumtext v1"
+logger=migrator t=2023-10-23T02:08:23.9-0700 lvl=info msg="Executing migration" id="create alert table v1"
+logger=migrator t=2023-10-23T02:08:23.9-0700 lvl=info msg="Executing migration" id="add index alert org_id & id "
+logger=migrator t=2023-10-23T02:08:23.91-0700 lvl=info msg="Executing migration" id="add index alert state"
+logger=migrator t=2023-10-23T02:08:23.91-0700 lvl=info msg="Executing migration" id="add index alert dashboard_id"
+logger=migrator t=2023-10-23T02:08:23.91-0700 lvl=info msg="Executing migration" id="Create alert_rule_tag table v1"
+logger=migrator t=2023-10-23T02:08:23.92-0700 lvl=info msg="Executing migration" id="Add unique index alert_rule_tag.alert_id_tag_id"
+logger=migrator t=2023-10-23T02:08:23.92-0700 lvl=info msg="Executing migration" id="drop index UQE_alert_rule_tag_alert_id_tag_id - v1"
+logger=migrator t=2023-10-23T02:08:23.92-0700 lvl=info msg="Executing migration" id="Rename table alert_rule_tag to alert_rule_tag_v1 - v1"
+logger=migrator t=2023-10-23T02:08:23.93-0700 lvl=info msg="Executing migration" id="Create alert_rule_tag table v2"
+logger=migrator t=2023-10-23T02:08:23.93-0700 lvl=info msg="Executing migration" id="create index UQE_alert_rule_tag_alert_id_tag_id - Add unique index alert_rule_tag.alert_id_tag_id V2"
+logger=migrator t=2023-10-23T02:08:23.93-0700 lvl=info msg="Executing migration" id="copy alert_rule_tag v1 to v2"
+logger=migrator t=2023-10-23T02:08:23.94-0700 lvl=info msg="Executing migration" id="drop table alert_rule_tag_v1"
+logger=migrator t=2023-10-23T02:08:23.94-0700 lvl=info msg="Executing migration" id="create alert_notification table v1"
+logger=migrator t=2023-10-23T02:08:23.94-0700 lvl=info msg="Executing migration" id="Add column is_default"
+logger=migrator t=2023-10-23T02:08:23.94-0700 lvl=info msg="Executing migration" id="Add column frequency"
+logger=migrator t=2023-10-23T02:08:23.95-0700 lvl=info msg="Executing migration" id="Add column send_reminder"
+logger=migrator t=2023-10-23T02:08:23.95-0700 lvl=info msg="Executing migration" id="Add column disable_resolve_message"
+logger=migrator t=2023-10-23T02:08:23.95-0700 lvl=info msg="Executing migration" id="add index alert_notification org_id & name"
+logger=migrator t=2023-10-23T02:08:23.96-0700 lvl=info msg="Executing migration" id="Update alert table charset"
+logger=migrator t=2023-10-23T02:08:23.96-0700 lvl=info msg="Executing migration" id="Update alert_notification table charset"
+logger=migrator t=2023-10-23T02:08:23.96-0700 lvl=info msg="Executing migration" id="create notification_journal table v1"
+logger=migrator t=2023-10-23T02:08:23.97-0700 lvl=info msg="Executing migration" id="add index notification_journal org_id & alert_id & notifier_id"
+logger=migrator t=2023-10-23T02:08:23.97-0700 lvl=info msg="Executing migration" id="drop alert_notification_journal"
+logger=migrator t=2023-10-23T02:08:23.97-0700 lvl=info msg="Executing migration" id="create alert_notification_state table v1"
+logger=migrator t=2023-10-23T02:08:23.97-0700 lvl=info msg="Executing migration" id="add index alert_notification_state org_id & alert_id & notifier_id"
+logger=migrator t=2023-10-23T02:08:23.98-0700 lvl=info msg="Executing migration" id="Add for to alert table"
+logger=migrator t=2023-10-23T02:08:23.98-0700 lvl=info msg="Executing migration" id="Add column uid in alert_notification"
+logger=migrator t=2023-10-23T02:08:23.98-0700 lvl=info msg="Executing migration" id="Update uid column values in alert_notification"
+logger=migrator t=2023-10-23T02:08:23.98-0700 lvl=info msg="Executing migration" id="Add unique index alert_notification_org_id_uid"
+logger=migrator t=2023-10-23T02:08:23.99-0700 lvl=info msg="Executing migration" id="Remove unique index org_id_name"
+logger=migrator t=2023-10-23T02:08:23.99-0700 lvl=info msg="Executing migration" id="Add column secure_settings in alert_notification"
+logger=migrator t=2023-10-23T02:08:24-0700 lvl=info msg="Executing migration" id="alter alert.settings to mediumtext"
+logger=migrator t=2023-10-23T02:08:24-0700 lvl=info msg="Executing migration" id="Add non-unique index alert_notification_state_alert_id"
+logger=migrator t=2023-10-23T02:08:24-0700 lvl=info msg="Executing migration" id="Add non-unique index alert_rule_tag_alert_id"
+logger=migrator t=2023-10-23T02:08:24.01-0700 lvl=info msg="Executing migration" id="Drop old annotation table v4"
+logger=migrator t=2023-10-23T02:08:24.01-0700 lvl=info msg="Executing migration" id="create annotation table v5"
+logger=migrator t=2023-10-23T02:08:24.01-0700 lvl=info msg="Executing migration" id="add index annotation 0 v3"
+logger=migrator t=2023-10-23T02:08:24.01-0700 lvl=info msg="Executing migration" id="add index annotation 1 v3"
+logger=migrator t=2023-10-23T02:08:24.02-0700 lvl=info msg="Executing migration" id="add index annotation 2 v3"
+logger=migrator t=2023-10-23T02:08:24.02-0700 lvl=info msg="Executing migration" id="add index annotation 3 v3"
+logger=migrator t=2023-10-23T02:08:24.02-0700 lvl=info msg="Executing migration" id="add index annotation 4 v3"
+logger=migrator t=2023-10-23T02:08:24.03-0700 lvl=info msg="Executing migration" id="Update annotation table charset"
+logger=migrator t=2023-10-23T02:08:24.03-0700 lvl=info msg="Executing migration" id="Add column region_id to annotation table"
+logger=migrator t=2023-10-23T02:08:24.04-0700 lvl=info msg="Executing migration" id="Drop category_id index"
+logger=migrator t=2023-10-23T02:08:24.04-0700 lvl=info msg="Executing migration" id="Add column tags to annotation table"
+logger=migrator t=2023-10-23T02:08:24.04-0700 lvl=info msg="Executing migration" id="Create annotation_tag table v2"
+logger=migrator t=2023-10-23T02:08:24.05-0700 lvl=info msg="Executing migration" id="Add unique index annotation_tag.annotation_id_tag_id"
+logger=migrator t=2023-10-23T02:08:24.05-0700 lvl=info msg="Executing migration" id="drop index UQE_annotation_tag_annotation_id_tag_id - v2"
+logger=migrator t=2023-10-23T02:08:24.05-0700 lvl=info msg="Executing migration" id="Rename table annotation_tag to annotation_tag_v2 - v2"
+logger=migrator t=2023-10-23T02:08:24.06-0700 lvl=info msg="Executing migration" id="Create annotation_tag table v3"
+logger=migrator t=2023-10-23T02:08:24.06-0700 lvl=info msg="Executing migration" id="create index UQE_annotation_tag_annotation_id_tag_id - Add unique index annotation_tag.annotation_id_tag_id V3"
+logger=migrator t=2023-10-23T02:08:24.06-0700 lvl=info msg="Executing migration" id="copy annotation_tag v2 to v3"
+logger=migrator t=2023-10-23T02:08:24.06-0700 lvl=info msg="Executing migration" id="drop table annotation_tag_v2"
+logger=migrator t=2023-10-23T02:08:24.07-0700 lvl=info msg="Executing migration" id="Update alert annotations and set TEXT to empty"
+logger=migrator t=2023-10-23T02:08:24.07-0700 lvl=info msg="Executing migration" id="Add created time to annotation table"
+logger=migrator t=2023-10-23T02:08:24.07-0700 lvl=info msg="Executing migration" id="Add updated time to annotation table"
+logger=migrator t=2023-10-23T02:08:24.08-0700 lvl=info msg="Executing migration" id="Add index for created in annotation table"
+logger=migrator t=2023-10-23T02:08:24.08-0700 lvl=info msg="Executing migration" id="Add index for updated in annotation table"
+logger=migrator t=2023-10-23T02:08:24.08-0700 lvl=info msg="Executing migration" id="Convert existing annotations from seconds to milliseconds"
+logger=migrator t=2023-10-23T02:08:24.08-0700 lvl=info msg="Executing migration" id="Add epoch_end column"
+logger=migrator t=2023-10-23T02:08:24.09-0700 lvl=info msg="Executing migration" id="Add index for epoch_end"
+logger=migrator t=2023-10-23T02:08:24.09-0700 lvl=info msg="Executing migration" id="Make epoch_end the same as epoch"
+logger=migrator t=2023-10-23T02:08:24.09-0700 lvl=info msg="Executing migration" id="Move region to single row"
+logger=migrator t=2023-10-23T02:08:24.09-0700 lvl=info msg="Executing migration" id="Remove index org_id_epoch from annotation table"
+logger=migrator t=2023-10-23T02:08:24.1-0700 lvl=info msg="Executing migration" id="Remove index org_id_dashboard_id_panel_id_epoch from annotation table"
+logger=migrator t=2023-10-23T02:08:24.1-0700 lvl=info msg="Executing migration" id="Add index for org_id_dashboard_id_epoch_end_epoch on annotation table"
+logger=migrator t=2023-10-23T02:08:24.1-0700 lvl=info msg="Executing migration" id="Add index for org_id_epoch_end_epoch on annotation table"
+logger=migrator t=2023-10-23T02:08:24.11-0700 lvl=info msg="Executing migration" id="Remove index org_id_epoch_epoch_end from annotation table"
+logger=migrator t=2023-10-23T02:08:24.11-0700 lvl=info msg="Executing migration" id="Add index for alert_id on annotation table"
+logger=migrator t=2023-10-23T02:08:24.11-0700 lvl=info msg="Executing migration" id="create test_data table"
+logger=migrator t=2023-10-23T02:08:24.11-0700 lvl=info msg="Executing migration" id="create dashboard_version table v1"
+logger=migrator t=2023-10-23T02:08:24.12-0700 lvl=info msg="Executing migration" id="add index dashboard_version.dashboard_id"
+logger=migrator t=2023-10-23T02:08:24.12-0700 lvl=info msg="Executing migration" id="add unique index dashboard_version.dashboard_id and dashboard_version.version"
+logger=migrator t=2023-10-23T02:08:24.12-0700 lvl=info msg="Executing migration" id="Set dashboard version to 1 where 0"
+logger=migrator t=2023-10-23T02:08:24.13-0700 lvl=info msg="Executing migration" id="save existing dashboard data in dashboard_version table v1"
+logger=migrator t=2023-10-23T02:08:24.13-0700 lvl=info msg="Executing migration" id="alter dashboard_version.data to mediumtext v1"
+logger=migrator t=2023-10-23T02:08:24.13-0700 lvl=info msg="Executing migration" id="create team table"
+logger=migrator t=2023-10-23T02:08:24.14-0700 lvl=info msg="Executing migration" id="add index team.org_id"
+logger=migrator t=2023-10-23T02:08:24.14-0700 lvl=info msg="Executing migration" id="add unique index team_org_id_name"
+logger=migrator t=2023-10-23T02:08:24.14-0700 lvl=info msg="Executing migration" id="create team member table"
+logger=migrator t=2023-10-23T02:08:24.15-0700 lvl=info msg="Executing migration" id="add index team_member.org_id"
+logger=migrator t=2023-10-23T02:08:24.15-0700 lvl=info msg="Executing migration" id="add unique index team_member_org_id_team_id_user_id"
+logger=migrator t=2023-10-23T02:08:24.15-0700 lvl=info msg="Executing migration" id="add index team_member.team_id"
+logger=migrator t=2023-10-23T02:08:24.15-0700 lvl=info msg="Executing migration" id="Add column email to team table"
+logger=migrator t=2023-10-23T02:08:24.16-0700 lvl=info msg="Executing migration" id="Add column external to team_member table"
+logger=migrator t=2023-10-23T02:08:24.16-0700 lvl=info msg="Executing migration" id="Add column permission to team_member table"
+logger=migrator t=2023-10-23T02:08:24.16-0700 lvl=info msg="Executing migration" id="create dashboard acl table"
+logger=migrator t=2023-10-23T02:08:24.17-0700 lvl=info msg="Executing migration" id="add index dashboard_acl_dashboard_id"
+logger=migrator t=2023-10-23T02:08:24.17-0700 lvl=info msg="Executing migration" id="add unique index dashboard_acl_dashboard_id_user_id"
+logger=migrator t=2023-10-23T02:08:24.17-0700 lvl=info msg="Executing migration" id="add unique index dashboard_acl_dashboard_id_team_id"
+logger=migrator t=2023-10-23T02:08:24.18-0700 lvl=info msg="Executing migration" id="add index dashboard_acl_user_id"
+logger=migrator t=2023-10-23T02:08:24.18-0700 lvl=info msg="Executing migration" id="add index dashboard_acl_team_id"
+logger=migrator t=2023-10-23T02:08:24.18-0700 lvl=info msg="Executing migration" id="add index dashboard_acl_org_id_role"
+logger=migrator t=2023-10-23T02:08:24.19-0700 lvl=info msg="Executing migration" id="add index dashboard_permission"
+logger=migrator t=2023-10-23T02:08:24.19-0700 lvl=info msg="Executing migration" id="save default acl rules in dashboard_acl table"
+logger=migrator t=2023-10-23T02:08:24.19-0700 lvl=info msg="Executing migration" id="delete acl rules for deleted dashboards and folders"
+logger=migrator t=2023-10-23T02:08:24.19-0700 lvl=info msg="Executing migration" id="create tag table"
+logger=migrator t=2023-10-23T02:08:24.2-0700 lvl=info msg="Executing migration" id="add index tag.key_value"
+logger=migrator t=2023-10-23T02:08:24.2-0700 lvl=info msg="Executing migration" id="create login attempt table"
+logger=migrator t=2023-10-23T02:08:24.2-0700 lvl=info msg="Executing migration" id="add index login_attempt.username"
+logger=migrator t=2023-10-23T02:08:24.21-0700 lvl=info msg="Executing migration" id="drop index IDX_login_attempt_username - v1"
+logger=migrator t=2023-10-23T02:08:24.21-0700 lvl=info msg="Executing migration" id="Rename table login_attempt to login_attempt_tmp_qwerty - v1"
+logger=migrator t=2023-10-23T02:08:24.22-0700 lvl=info msg="Executing migration" id="create login_attempt v2"
+logger=migrator t=2023-10-23T02:08:24.22-0700 lvl=info msg="Executing migration" id="create index IDX_login_attempt_username - v2"
+logger=migrator t=2023-10-23T02:08:24.22-0700 lvl=info msg="Executing migration" id="copy login_attempt v1 to v2"
+logger=migrator t=2023-10-23T02:08:24.22-0700 lvl=info msg="Executing migration" id="drop login_attempt_tmp_qwerty"
+logger=migrator t=2023-10-23T02:08:24.23-0700 lvl=info msg="Executing migration" id="create user auth table"
+logger=migrator t=2023-10-23T02:08:24.23-0700 lvl=info msg="Executing migration" id="create index IDX_user_auth_auth_module_auth_id - v1"
+logger=migrator t=2023-10-23T02:08:24.23-0700 lvl=info msg="Executing migration" id="alter user_auth.auth_id to length 190"
+logger=migrator t=2023-10-23T02:08:24.23-0700 lvl=info msg="Executing migration" id="Add OAuth access token to user_auth"
+logger=migrator t=2023-10-23T02:08:24.24-0700 lvl=info msg="Executing migration" id="Add OAuth refresh token to user_auth"
+logger=migrator t=2023-10-23T02:08:24.24-0700 lvl=info msg="Executing migration" id="Add OAuth token type to user_auth"
+logger=migrator t=2023-10-23T02:08:24.24-0700 lvl=info msg="Executing migration" id="Add OAuth expiry to user_auth"
+logger=migrator t=2023-10-23T02:08:24.25-0700 lvl=info msg="Executing migration" id="Add index to user_id column in user_auth"
+logger=migrator t=2023-10-23T02:08:24.25-0700 lvl=info msg="Executing migration" id="Add OAuth ID token to user_auth"
+logger=migrator t=2023-10-23T02:08:24.26-0700 lvl=info msg="Executing migration" id="create server_lock table"
+logger=migrator t=2023-10-23T02:08:24.26-0700 lvl=info msg="Executing migration" id="add index server_lock.operation_uid"
+logger=migrator t=2023-10-23T02:08:24.26-0700 lvl=info msg="Executing migration" id="create user auth token table"
+logger=migrator t=2023-10-23T02:08:24.27-0700 lvl=info msg="Executing migration" id="add unique index user_auth_token.auth_token"
+logger=migrator t=2023-10-23T02:08:24.27-0700 lvl=info msg="Executing migration" id="add unique index user_auth_token.prev_auth_token"
+logger=migrator t=2023-10-23T02:08:24.27-0700 lvl=info msg="Executing migration" id="add index user_auth_token.user_id"
+logger=migrator t=2023-10-23T02:08:24.27-0700 lvl=info msg="Executing migration" id="Add revoked_at to the user auth token"
+logger=migrator t=2023-10-23T02:08:24.28-0700 lvl=info msg="Executing migration" id="create cache_data table"
+logger=migrator t=2023-10-23T02:08:24.28-0700 lvl=info msg="Executing migration" id="add unique index cache_data.cache_key"
+logger=migrator t=2023-10-23T02:08:24.29-0700 lvl=info msg="Executing migration" id="create short_url table v1"
+logger=migrator t=2023-10-23T02:08:24.29-0700 lvl=info msg="Executing migration" id="add index short_url.org_id-uid"
+logger=migrator t=2023-10-23T02:08:24.29-0700 lvl=info msg="Executing migration" id="delete alert_definition table"
+logger=migrator t=2023-10-23T02:08:24.3-0700 lvl=info msg="Executing migration" id="recreate alert_definition table"
+logger=migrator t=2023-10-23T02:08:24.3-0700 lvl=info msg="Executing migration" id="add index in alert_definition on org_id and title columns"
+logger=migrator t=2023-10-23T02:08:24.31-0700 lvl=info msg="Executing migration" id="add index in alert_definition on org_id and uid columns"
+logger=migrator t=2023-10-23T02:08:24.32-0700 lvl=info msg="Executing migration" id="alter alert_definition table data column to mediumtext in mysql"
+logger=migrator t=2023-10-23T02:08:24.32-0700 lvl=info msg="Executing migration" id="drop index in alert_definition on org_id and title columns"
+logger=migrator t=2023-10-23T02:08:24.32-0700 lvl=info msg="Executing migration" id="drop index in alert_definition on org_id and uid columns"
+logger=migrator t=2023-10-23T02:08:24.32-0700 lvl=info msg="Executing migration" id="add unique index in alert_definition on org_id and title columns"
+logger=migrator t=2023-10-23T02:08:24.32-0700 lvl=info msg="Executing migration" id="add unique index in alert_definition on org_id and uid columns"
+logger=migrator t=2023-10-23T02:08:24.33-0700 lvl=info msg="Executing migration" id="Add column paused in alert_definition"
+logger=migrator t=2023-10-23T02:08:24.33-0700 lvl=info msg="Executing migration" id="drop alert_definition table"
+logger=migrator t=2023-10-23T02:08:24.33-0700 lvl=info msg="Executing migration" id="delete alert_definition_version table"
+logger=migrator t=2023-10-23T02:08:24.34-0700 lvl=info msg="Executing migration" id="recreate alert_definition_version table"
+logger=migrator t=2023-10-23T02:08:24.34-0700 lvl=info msg="Executing migration" id="add index in alert_definition_version table on alert_definition_id and version columns"
+logger=migrator t=2023-10-23T02:08:24.34-0700 lvl=info msg="Executing migration" id="add index in alert_definition_version table on alert_definition_uid and version columns"
+logger=migrator t=2023-10-23T02:08:24.35-0700 lvl=info msg="Executing migration" id="alter alert_definition_version table data column to mediumtext in mysql"
+logger=migrator t=2023-10-23T02:08:24.35-0700 lvl=info msg="Executing migration" id="drop alert_definition_version table"
+logger=migrator t=2023-10-23T02:08:24.35-0700 lvl=info msg="Executing migration" id="create alert_instance table"
+logger=migrator t=2023-10-23T02:08:24.35-0700 lvl=info msg="Executing migration" id="add index in alert_instance table on def_org_id, def_uid and current_state columns"
+logger=migrator t=2023-10-23T02:08:24.35-0700 lvl=info msg="Executing migration" id="add index in alert_instance table on def_org_id, current_state columns"
+logger=migrator t=2023-10-23T02:08:24.36-0700 lvl=info msg="Executing migration" id="add column current_state_end to alert_instance"
+logger=migrator t=2023-10-23T02:08:24.36-0700 lvl=info msg="Executing migration" id="remove index def_org_id, def_uid, current_state on alert_instance"
+logger=migrator t=2023-10-23T02:08:24.36-0700 lvl=info msg="Executing migration" id="remove index def_org_id, current_state on alert_instance"
+logger=migrator t=2023-10-23T02:08:24.36-0700 lvl=info msg="Executing migration" id="rename def_org_id to rule_org_id in alert_instance"
+logger=migrator t=2023-10-23T02:08:24.38-0700 lvl=info msg="Executing migration" id="rename def_uid to rule_uid in alert_instance"
+logger=migrator t=2023-10-23T02:08:24.4-0700 lvl=info msg="Executing migration" id="add index rule_org_id, rule_uid, current_state on alert_instance"
+logger=migrator t=2023-10-23T02:08:24.41-0700 lvl=info msg="Executing migration" id="add index rule_org_id, current_state on alert_instance"
+logger=migrator t=2023-10-23T02:08:24.42-0700 lvl=info msg="Executing migration" id="create alert_rule table"
+logger=migrator t=2023-10-23T02:08:24.43-0700 lvl=info msg="Executing migration" id="add index in alert_rule on org_id and title columns"
+logger=migrator t=2023-10-23T02:08:24.44-0700 lvl=info msg="Executing migration" id="add index in alert_rule on org_id and uid columns"
+logger=migrator t=2023-10-23T02:08:24.44-0700 lvl=info msg="Executing migration" id="add index in alert_rule on org_id, namespace_uid, group_uid columns"
+logger=migrator t=2023-10-23T02:08:24.45-0700 lvl=info msg="Executing migration" id="alter alert_rule table data column to mediumtext in mysql"
+logger=migrator t=2023-10-23T02:08:24.46-0700 lvl=info msg="Executing migration" id="add column for to alert_rule"
+logger=migrator t=2023-10-23T02:08:24.47-0700 lvl=info msg="Executing migration" id="add column annotations to alert_rule"
+logger=migrator t=2023-10-23T02:08:24.48-0700 lvl=info msg="Executing migration" id="add column labels to alert_rule"
+logger=migrator t=2023-10-23T02:08:24.49-0700 lvl=info msg="Executing migration" id="remove unique index from alert_rule on org_id, title columns"
+logger=migrator t=2023-10-23T02:08:24.5-0700 lvl=info msg="Executing migration" id="add index in alert_rule on org_id, namespase_uid and title columns"
+logger=migrator t=2023-10-23T02:08:24.51-0700 lvl=info msg="Executing migration" id="add dashboard_uid column to alert_rule"
+logger=migrator t=2023-10-23T02:08:24.52-0700 lvl=info msg="Executing migration" id="add panel_id column to alert_rule"
+logger=migrator t=2023-10-23T02:08:24.53-0700 lvl=info msg="Executing migration" id="add index in alert_rule on org_id, dashboard_uid and panel_id columns"
+logger=migrator t=2023-10-23T02:08:24.54-0700 lvl=info msg="Executing migration" id="create alert_rule_version table"
+logger=migrator t=2023-10-23T02:08:24.55-0700 lvl=info msg="Executing migration" id="add index in alert_rule_version table on rule_org_id, rule_uid and version columns"
+logger=migrator t=2023-10-23T02:08:24.56-0700 lvl=info msg="Executing migration" id="add index in alert_rule_version table on rule_org_id, rule_namespace_uid and rule_group columns"
+logger=migrator t=2023-10-23T02:08:24.57-0700 lvl=info msg="Executing migration" id="alter alert_rule_version table data column to mediumtext in mysql"
+logger=migrator t=2023-10-23T02:08:24.57-0700 lvl=info msg="Executing migration" id="add column for to alert_rule_version"
+logger=migrator t=2023-10-23T02:08:24.58-0700 lvl=info msg="Executing migration" id="add column annotations to alert_rule_version"
+logger=migrator t=2023-10-23T02:08:24.59-0700 lvl=info msg="Executing migration" id="add column labels to alert_rule_version"
+logger=migrator t=2023-10-23T02:08:24.6-0700 lvl=info msg="Executing migration" id=create_alert_configuration_table
+logger=migrator t=2023-10-23T02:08:24.61-0700 lvl=info msg="Executing migration" id="Add column default in alert_configuration"
+logger=migrator t=2023-10-23T02:08:24.61-0700 lvl=info msg="Executing migration" id="alert alert_configuration alertmanager_configuration column from TEXT to MEDIUMTEXT if mysql"
+logger=migrator t=2023-10-23T02:08:24.62-0700 lvl=info msg="Executing migration" id="add column org_id in alert_configuration"
+logger=migrator t=2023-10-23T02:08:24.62-0700 lvl=info msg="Executing migration" id="add index in alert_configuration table on org_id column"
+logger=migrator t=2023-10-23T02:08:24.63-0700 lvl=info msg="Executing migration" id="add configuration_hash column to alert_configuration"
+logger=migrator t=2023-10-23T02:08:24.64-0700 lvl=info msg="Executing migration" id=create_ngalert_configuration_table
+logger=migrator t=2023-10-23T02:08:24.64-0700 lvl=info msg="Executing migration" id="add index in ngalert_configuration on org_id column"
+logger=migrator t=2023-10-23T02:08:24.65-0700 lvl=info msg="Executing migration" id="add column send_alerts_to in ngalert_configuration"
+logger=migrator t=2023-10-23T02:08:24.66-0700 lvl=info msg="Executing migration" id="create provenance_type table"
+logger=migrator t=2023-10-23T02:08:24.66-0700 lvl=info msg="Executing migration" id="add index to uniquify (record_key, record_type, org_id) columns"
+logger=migrator t=2023-10-23T02:08:24.67-0700 lvl=info msg="Executing migration" id="create library_element table v1"
+logger=migrator t=2023-10-23T02:08:24.67-0700 lvl=info msg="Executing migration" id="add index library_element org_id-folder_id-name-kind"
+logger=migrator t=2023-10-23T02:08:24.68-0700 lvl=info msg="Executing migration" id="create library_element_connection table v1"
+logger=migrator t=2023-10-23T02:08:24.68-0700 lvl=info msg="Executing migration" id="add index library_element_connection element_id-kind-connection_id"
+logger=migrator t=2023-10-23T02:08:24.69-0700 lvl=info msg="Executing migration" id="add unique index library_element org_id_uid"
+logger=migrator t=2023-10-23T02:08:24.69-0700 lvl=info msg="Executing migration" id="increase max description length to 2048"
+logger=migrator t=2023-10-23T02:08:24.7-0700 lvl=info msg="Executing migration" id="create data_keys table"
+logger=migrator t=2023-10-23T02:08:24.7-0700 lvl=info msg="Executing migration" id="create kv_store table v1"
+logger=migrator t=2023-10-23T02:08:24.71-0700 lvl=info msg="Executing migration" id="add index kv_store.org_id-namespace-key"
+logger=migrator t=2023-10-23T02:08:24.71-0700 lvl=info msg="Executing migration" id="create permission table"
+logger=migrator t=2023-10-23T02:08:24.72-0700 lvl=info msg="Executing migration" id="add unique index permission.role_id"
+logger=migrator t=2023-10-23T02:08:24.72-0700 lvl=info msg="Executing migration" id="add unique index role_id_action_scope"
+logger=migrator t=2023-10-23T02:08:24.73-0700 lvl=info msg="Executing migration" id="create role table"
+logger=migrator t=2023-10-23T02:08:24.73-0700 lvl=info msg="Executing migration" id="add column display_name"
+logger=migrator t=2023-10-23T02:08:24.75-0700 lvl=info msg="Executing migration" id="add column group_name"
+logger=migrator t=2023-10-23T02:08:24.75-0700 lvl=info msg="Executing migration" id="add index role.org_id"
+logger=migrator t=2023-10-23T02:08:24.76-0700 lvl=info msg="Executing migration" id="add unique index role_org_id_name"
+logger=migrator t=2023-10-23T02:08:24.76-0700 lvl=info msg="Executing migration" id="add index role_org_id_uid"
+logger=migrator t=2023-10-23T02:08:24.77-0700 lvl=info msg="Executing migration" id="create team role table"
+logger=migrator t=2023-10-23T02:08:24.77-0700 lvl=info msg="Executing migration" id="add index team_role.org_id"
+logger=migrator t=2023-10-23T02:08:24.77-0700 lvl=info msg="Executing migration" id="add unique index team_role_org_id_team_id_role_id"
+logger=migrator t=2023-10-23T02:08:24.78-0700 lvl=info msg="Executing migration" id="add index team_role.team_id"
+logger=migrator t=2023-10-23T02:08:24.78-0700 lvl=info msg="Executing migration" id="create user role table"
+logger=migrator t=2023-10-23T02:08:24.79-0700 lvl=info msg="Executing migration" id="add index user_role.org_id"
+logger=migrator t=2023-10-23T02:08:24.79-0700 lvl=info msg="Executing migration" id="add unique index user_role_org_id_user_id_role_id"
+logger=migrator t=2023-10-23T02:08:24.8-0700 lvl=info msg="Executing migration" id="add index user_role.user_id"
+logger=migrator t=2023-10-23T02:08:24.8-0700 lvl=info msg="Executing migration" id="create builtin role table"
+logger=migrator t=2023-10-23T02:08:24.81-0700 lvl=info msg="Executing migration" id="add index builtin_role.role_id"
+logger=migrator t=2023-10-23T02:08:24.81-0700 lvl=info msg="Executing migration" id="add index builtin_role.name"
+logger=migrator t=2023-10-23T02:08:24.82-0700 lvl=info msg="Executing migration" id="Add column org_id to builtin_role table"
+logger=migrator t=2023-10-23T02:08:24.83-0700 lvl=info msg="Executing migration" id="add index builtin_role.org_id"
+logger=migrator t=2023-10-23T02:08:24.83-0700 lvl=info msg="Executing migration" id="add unique index builtin_role_org_id_role_id_role"
+logger=migrator t=2023-10-23T02:08:24.83-0700 lvl=info msg="Executing migration" id="Remove unique index role_org_id_uid"
+logger=migrator t=2023-10-23T02:08:24.84-0700 lvl=info msg="Executing migration" id="add unique index role.uid"
+logger=migrator t=2023-10-23T02:08:24.85-0700 lvl=info msg="Executing migration" id="create seed assignment table"
+logger=migrator t=2023-10-23T02:08:24.85-0700 lvl=info msg="Executing migration" id="add unique index builtin_role_role_name"
+logger=migrator t=2023-10-23T02:08:24.85-0700 lvl=info msg="Executing migration" id="add column hidden to role table"
+logger=migrator t=2023-10-23T02:08:24.86-0700 lvl=info msg="Executing migration" id="create query_history table v1"
+logger=migrator t=2023-10-23T02:08:24.87-0700 lvl=info msg="Executing migration" id="add index query_history.org_id-created_by-datasource_uid"
+logger=migrator t=2023-10-23T02:08:24.87-0700 lvl=info msg="Executing migration" id="create query_history_star table v1"
+logger=migrator t=2023-10-23T02:08:24.88-0700 lvl=info msg="Executing migration" id="add index query_history.user_id-query_uid"
+logger=migrator t=2023-10-23T02:08:24.88-0700 lvl=info msg="Executing migration" id="create data_source_usage_by_day table"
+logger=migrator t=2023-10-23T02:08:24.88-0700 lvl=info msg="Executing migration" id="create data_source_usage_by_day(data_source_id) index"
+logger=migrator t=2023-10-23T02:08:24.89-0700 lvl=info msg="Executing migration" id="create data_source_usage_by_day(data_source_id, day) unique index"
+logger=migrator t=2023-10-23T02:08:24.9-0700 lvl=info msg="Executing migration" id="create dashboard_usage_by_day table"
+logger=migrator t=2023-10-23T02:08:24.9-0700 lvl=info msg="Executing migration" id="create dashboard_usage_sums table"
+logger=migrator t=2023-10-23T02:08:24.91-0700 lvl=info msg="Executing migration" id="create dashboard_usage_by_day(dashboard_id) index"
+logger=migrator t=2023-10-23T02:08:24.91-0700 lvl=info msg="Executing migration" id="create dashboard_usage_by_day(dashboard_id, day) index"
+logger=migrator t=2023-10-23T02:08:24.92-0700 lvl=info msg="Executing migration" id="add column errors_last_1_days to dashboard_usage_sums"
+logger=migrator t=2023-10-23T02:08:24.93-0700 lvl=info msg="Executing migration" id="add column errors_last_7_days to dashboard_usage_sums"
+logger=migrator t=2023-10-23T02:08:24.94-0700 lvl=info msg="Executing migration" id="add column errors_last_30_days to dashboard_usage_sums"
+logger=migrator t=2023-10-23T02:08:24.94-0700 lvl=info msg="Executing migration" id="add column errors_total to dashboard_usage_sums"
+logger=migrator t=2023-10-23T02:08:24.96-0700 lvl=info msg="Executing migration" id="create user_dashboard_views table"
+logger=migrator t=2023-10-23T02:08:24.96-0700 lvl=info msg="Executing migration" id="add index user_dashboard_views.user_id"
+logger=migrator t=2023-10-23T02:08:24.97-0700 lvl=info msg="Executing migration" id="add index user_dashboard_views.dashboard_id"
+logger=migrator t=2023-10-23T02:08:24.97-0700 lvl=info msg="Executing migration" id="add unique index user_dashboard_views_user_id_dashboard_id"
+logger=migrator t=2023-10-23T02:08:24.98-0700 lvl=info msg="Executing migration" id="create user_stats table"
+logger=migrator t=2023-10-23T02:08:24.99-0700 lvl=info msg="Executing migration" id="add unique index user_stats(user_id)"
+logger=migrator t=2023-10-23T02:08:24.99-0700 lvl=info msg="Executing migration" id="create data_source_cache table"
+logger=migrator t=2023-10-23T02:08:25-0700 lvl=info msg="Executing migration" id="add index data_source_cache.data_source_id"
+logger=migrator t=2023-10-23T02:08:25.01-0700 lvl=info msg="Executing migration" id="add use_default_ttl column"
+logger=migrator t=2023-10-23T02:08:25.02-0700 lvl=info msg="Executing migration" id="add data_source_cache.data_source_uid column"
+logger=migrator t=2023-10-23T02:08:25.02-0700 lvl=info msg="Executing migration" id="remove abandoned data_source_cache records"
+logger=migrator t=2023-10-23T02:08:25.03-0700 lvl=info msg="Executing migration" id="update data_source_cache.data_source_uid value"
+logger=migrator t=2023-10-23T02:08:25.03-0700 lvl=info msg="Executing migration" id="add index data_source_cache.data_source_uid"
+logger=migrator t=2023-10-23T02:08:25.04-0700 lvl=info msg="Executing migration" id="add data_source_cache.ttl_resources_ms column"
+logger=migrator t=2023-10-23T02:08:25.05-0700 lvl=info msg="Executing migration" id="update data_source_cache.ttl_resources_ms to have the same value as ttl_ms"
+logger=migrator t=2023-10-23T02:08:25.05-0700 lvl=info msg="Executing migration" id="create data_source_acl table"
+logger=migrator t=2023-10-23T02:08:25.05-0700 lvl=info msg="Executing migration" id="add index data_source_acl.data_source_id"
+logger=migrator t=2023-10-23T02:08:25.06-0700 lvl=info msg="Executing migration" id="add unique index datasource_acl.unique"
+logger=migrator t=2023-10-23T02:08:25.07-0700 lvl=info msg="Executing migration" id="create license_token table"
+logger=migrator t=2023-10-23T02:08:25.07-0700 lvl=info msg="Executing migration" id="drop recorded_queries table v14"
+logger=migrator t=2023-10-23T02:08:25.07-0700 lvl=info msg="Executing migration" id="drop recording_rules table v14"
+logger=migrator t=2023-10-23T02:08:25.08-0700 lvl=info msg="Executing migration" id="create recording_rules table v14"
+logger=migrator t=2023-10-23T02:08:25.09-0700 lvl=info msg="Executing migration" id="create remote_write_targets table v1"
+logger=migrator t=2023-10-23T02:08:25.09-0700 lvl=info msg="Executing migration" id="Add prom_name to recording_rules table"
+logger=migrator t=2023-10-23T02:08:25.1-0700 lvl=info msg="Executing migration" id="ensure remote_write_targets table"
+logger=migrator t=2023-10-23T02:08:25.1-0700 lvl=info msg="Executing migration" id="create report config table v1"
+logger=migrator t=2023-10-23T02:08:25.11-0700 lvl=info msg="Executing migration" id="Add index report.user_id"
+logger=migrator t=2023-10-23T02:08:25.11-0700 lvl=info msg="Executing migration" id="add index to dashboard_id"
+logger=migrator t=2023-10-23T02:08:25.12-0700 lvl=info msg="Executing migration" id="add index to org_id"
+logger=migrator t=2023-10-23T02:08:25.12-0700 lvl=info msg="Executing migration" id="Add timezone to the report"
+logger=migrator t=2023-10-23T02:08:25.13-0700 lvl=info msg="Executing migration" id="Add time_from to the report"
+logger=migrator t=2023-10-23T02:08:25.14-0700 lvl=info msg="Executing migration" id="Add time_to to the report"
+logger=migrator t=2023-10-23T02:08:25.14-0700 lvl=info msg="Executing migration" id="Add PDF landscape option to the report"
+logger=migrator t=2023-10-23T02:08:25.15-0700 lvl=info msg="Executing migration" id="Add monthly day scheduling option to the report"
+logger=migrator t=2023-10-23T02:08:25.16-0700 lvl=info msg="Executing migration" id="Add PDF layout option to the report"
+logger=migrator t=2023-10-23T02:08:25.16-0700 lvl=info msg="Executing migration" id="Add PDF orientation option to the report"
+logger=migrator t=2023-10-23T02:08:25.17-0700 lvl=info msg="Executing migration" id="Update report pdf_orientation from pdf_landscape"
+logger=migrator t=2023-10-23T02:08:25.17-0700 lvl=info msg="Executing migration" id="create report settings table"
+logger=migrator t=2023-10-23T02:08:25.18-0700 lvl=info msg="Executing migration" id="Add dashboard_uid field to the report"
+logger=migrator t=2023-10-23T02:08:25.18-0700 lvl=info msg="Executing migration" id="Add template_vars field to the report"
+logger=migrator t=2023-10-23T02:08:25.19-0700 lvl=info msg="Executing migration" id="Add option to include dashboard url in the report"
+logger=migrator t=2023-10-23T02:08:25.2-0700 lvl=info msg="Executing migration" id="Add state field to the report"
+logger=migrator t=2023-10-23T02:08:25.21-0700 lvl=info msg="Executing migration" id="Add option to add CSV files to the report"
+logger=migrator t=2023-10-23T02:08:25.22-0700 lvl=info msg="Executing migration" id="Add scheduling start date"
+logger=migrator t=2023-10-23T02:08:25.22-0700 lvl=info msg="Executing migration" id="Add missing schedule_start date for old reports"
+logger=migrator t=2023-10-23T02:08:25.23-0700 lvl=info msg="Executing migration" id="Add scheduling end date"
+logger=migrator t=2023-10-23T02:08:25.23-0700 lvl=info msg="Executing migration" id="Add schedulinng custom interval frequency"
+logger=migrator t=2023-10-23T02:08:25.24-0700 lvl=info msg="Executing migration" id="Add scheduling custom interval amount"
+logger=migrator t=2023-10-23T02:08:25.25-0700 lvl=info msg="Executing migration" id="Add workdays only flag to report"
+logger=migrator t=2023-10-23T02:08:25.26-0700 lvl=info msg="Executing migration" id="create team group table"
+logger=migrator t=2023-10-23T02:08:25.26-0700 lvl=info msg="Executing migration" id="add index team_group.org_id"
+logger=migrator t=2023-10-23T02:08:25.26-0700 lvl=info msg="Executing migration" id="add unique index team_group.org_id_team_id_group_id"
+logger=migrator t=2023-10-23T02:08:25.27-0700 lvl=info msg="Executing migration" id="add index team_group.group_id"
+logger=migrator t=2023-10-23T02:08:25.28-0700 lvl=info msg="Executing migration" id="create settings table"
+logger=migrator t=2023-10-23T02:08:25.28-0700 lvl=info msg="Executing migration" id="add unique index settings.section_key"
+logger=migrator t=2023-10-23T02:08:25.29-0700 lvl=info msg="Executing migration" id="migrate role names"
+logger=migrator t=2023-10-23T02:08:25.3-0700 lvl=info msg="Executing migration" id="rename orgs roles"
+logger=migrator t=2023-10-23T02:08:25.32-0700 lvl=info msg="Executing migration" id="remove duplicated org role"
+logger=migrator t=2023-10-23T02:08:25.32-0700 lvl=info msg="migrations completed" performed=461 skipped=0 duration=2.355240018s
+logger=sqlstore t=2023-10-23T02:08:25.38-0700 lvl=info msg="Created default admin" user=admin
+logger=sqlstore t=2023-10-23T02:08:25.38-0700 lvl=info msg="Created default organization"
+logger=licensing t=2023-10-23T02:08:25.39-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T02:08:25.56-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T02:08:25.56-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T02:08:25.58-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T02:08:25.6-0700 lvl=info msg="Live Push Gateway initialization"
+logger=settings t=2023-10-23T02:09:00.1-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T02:09:00.1-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T02:09:00.1-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T02:09:00.1-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T02:09:00.1-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T02:09:00.1-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T02:09:00.1-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T02:09:00.11-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T02:09:00.11-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T02:09:00.15-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T02:09:00.17-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=4.83841ms
+logger=licensing t=2023-10-23T02:09:00.18-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T02:09:00.27-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T02:09:00.28-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T02:09:00.28-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T02:09:00.3-0700 lvl=info msg="Live Push Gateway initialization"
+logger=http.server t=2023-10-23T02:09:01.08-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=grafanaStorageLogger t=2023-10-23T02:09:01.08-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T02:09:01.08-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=server t=2023-10-23T02:09:31.36-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-23T02:09:31.37-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-23T02:09:33.67-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T02:09:33.67-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T02:09:33.67-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T02:09:33.67-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T02:09:33.67-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T02:09:33.67-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T02:09:33.67-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T02:09:33.67-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T02:09:33.67-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T02:09:33.73-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T02:09:33.75-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=3.565988ms
+logger=licensing t=2023-10-23T02:09:33.75-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T02:09:33.91-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T02:09:33.91-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T02:09:33.92-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T02:09:33.94-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-23T02:09:34.58-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T02:09:34.58-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-23T02:09:34.58-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2023-10-23T02:10:15.52-0700 lvl=info msg="Request Completed" method=GET path=/ status=302 remote_addr=89.165.117.168 time_ms=1 duration=1.707377ms size=29 referer= traceID=00000000000000000000000000000000
+logger=http.server t=2023-10-23T02:11:43.35-0700 lvl=info msg="Successful Login" User=admin@localhost
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:11:49.58-0700 lvl=info msg="Request Completed" method=POST path=/api/user/password/reset status=400 remote_addr=89.165.117.168 time_ms=18 duration=18.001048ms size=52 referer=http://185.252.28.42:3000/login traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:11:50.45-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.784386ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-23T02:16:12.14-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:21:42.13-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=5 duration=5.958187ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2023-10-23T02:25:31.98-0700 lvl=info msg="Request Completed" method=GET path=/d/SXv5Y0nSk/new-dashboard status=302 remote_addr=89.165.117.168 time_ms=2 duration=2.206506ms size=29 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:25:51.96-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=10 duration=10.847676ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2023-10-23T02:25:57.52-0700 lvl=info msg="Request Completed" method=GET path=/d/SXv5Y0nSk/new-dashboard status=302 remote_addr=89.165.117.168 time_ms=0 duration=539.478µs size=29 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:26:04.87-0700 lvl=eror msg="library element could not be found" error="library element could not be found" remote_addr=89.165.117.168 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:26:04.87-0700 lvl=info msg="Request Completed" method=GET path="/api/library-elements/name/Panel Title" status=404 remote_addr=89.165.117.168 time_ms=3 duration=3.810675ms size=93 referer="http://185.252.28.42:3000/d/SXv5Y0nSk/new-dashboard?orgId=1" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:26:04.92-0700 lvl=eror msg="library element could not be found" error="library element could not be found" remote_addr=89.165.117.168 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:26:04.92-0700 lvl=info msg="Request Completed" method=GET path="/api/library-elements/name/Panel Title" status=404 remote_addr=89.165.117.168 time_ms=3 duration=3.590427ms size=93 referer="http://185.252.28.42:3000/d/SXv5Y0nSk/new-dashboard?orgId=1" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2023-10-23T02:26:14.07-0700 lvl=info msg="Request Completed" method=GET path=/d/SXv5Y0nSk/new-dashboard status=302 remote_addr=89.165.117.168 time_ms=0 duration=313.013µs size=29 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:26:33.43-0700 lvl=eror msg="library element could not be found" error="library element could not be found" remote_addr=89.165.117.168 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:26:33.43-0700 lvl=info msg="Request Completed" method=GET path="/api/library-elements/name/Panel Title" status=404 remote_addr=89.165.117.168 time_ms=3 duration=3.015382ms size=93 referer="http://185.252.28.42:3000/d/SXv5Y0nSk/new-dashboard?orgId=1" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:26:33.47-0700 lvl=eror msg="library element could not be found" error="library element could not be found" remote_addr=89.165.117.168 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:26:33.47-0700 lvl=info msg="Request Completed" method=GET path="/api/library-elements/name/Panel Title" status=404 remote_addr=89.165.117.168 time_ms=2 duration=2.518127ms size=93 referer="http://185.252.28.42:3000/d/SXv5Y0nSk/new-dashboard?orgId=1" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:27:01.23-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.483766ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:27:14.6-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.221126ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2023-10-23T02:28:33.77-0700 lvl=info msg="Request Completed" method=GET path=/d/SXv5Y0nSk/new-dashboard status=302 remote_addr=89.165.117.168 time_ms=1 duration=1.073857ms size=29 referer=http://localhost:3000/ traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2023-10-23T02:28:41.1-0700 lvl=info msg="Request Completed" method=GET path=/d/SXv5Y0nSk/new-dashboard status=302 remote_addr=89.165.117.168 time_ms=1 duration=1.145038ms size=29 referer=http://localhost:3000/ traceID=00000000000000000000000000000000
+logger=server t=2023-10-23T02:29:02.63-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-23T02:29:02.64-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-23T02:43:32.61-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T02:43:32.61-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T02:43:32.61-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T02:43:32.61-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T02:43:32.62-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T02:43:32.62-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T02:43:32.62-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T02:43:32.62-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T02:43:32.62-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T02:43:32.71-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T02:43:32.73-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.801804ms
+logger=licensing t=2023-10-23T02:43:32.74-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T02:43:32.99-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T02:43:32.99-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T02:43:33.04-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T02:43:33.06-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-23T02:43:33.73-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T02:43:33.74-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-23T02:43:33.75-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:43:37.22-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=10 duration=10.683195ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:43:37.26-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.317299ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-23T02:43:37.26-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:43:45.86-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=25 duration=25.441796ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2023-10-23T02:44:09.95-0700 lvl=info msg="Request Completed" method=GET path=/d/SXv5Y0nSk/new-dashboard status=302 remote_addr=38.242.129.246 time_ms=1 duration=1.148612ms size=29 referer= traceID=00000000000000000000000000000000
+logger=server t=2023-10-23T02:45:29.1-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-23T02:45:29.11-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-23T02:50:33.82-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T02:50:33.82-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T02:50:33.82-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T02:50:33.82-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T02:50:33.82-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T02:50:33.82-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T02:50:33.82-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T02:50:33.82-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T02:50:33.82-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T02:50:33.9-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T02:50:33.93-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=3.041017ms
+logger=licensing t=2023-10-23T02:50:33.93-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T02:50:34.04-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T02:50:34.04-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T02:50:34.05-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T02:50:34.06-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-23T02:50:34.69-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T02:50:34.69-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-23T02:50:34.7-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2023-10-23T02:50:44.43-0700 lvl=info msg="Request Completed" method=GET path=/d/SXv5Y0nSk/new-dashboard status=302 remote_addr=38.242.129.246 time_ms=1 duration=1.129713ms size=29 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=0 uname= t=2023-10-23T02:50:51.07-0700 lvl=info msg="Request Completed" method=GET path=/d/SXv5Y0nSk/new-dashboard status=302 remote_addr=38.242.129.246 time_ms=0 duration=644.172µs size=29 referer= traceID=00000000000000000000000000000000
+logger=server t=2023-10-23T02:50:59.61-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-23T02:50:59.62-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-23T02:51:58.27-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T02:51:58.27-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T02:51:58.27-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T02:51:58.27-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T02:51:58.28-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T02:51:58.28-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T02:51:58.28-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T02:51:58.28-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T02:51:58.28-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T02:51:58.35-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T02:51:58.38-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.25563ms
+logger=licensing t=2023-10-23T02:51:58.38-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T02:51:58.54-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T02:51:58.54-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T02:51:58.55-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T02:51:58.57-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-23T02:51:59.25-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T02:51:59.25-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-23T02:51:59.25-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T02:52:06.59-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=1 duration=1.523308ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-23T02:52:07.55-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:52:11.08-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=7 duration=7.252798ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:52:11.12-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=5 duration=5.735098ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T02:53:42.51-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.184304ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T02:53:53.69-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.132549ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T02:56:53.02-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.441101ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:58:12.97-0700 lvl=eror msg="library element could not be found" error="library element could not be found" remote_addr=89.165.117.168 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:58:12.99-0700 lvl=info msg="Request Completed" method=GET path="/api/library-elements/name/Panel Title" status=404 remote_addr=89.165.117.168 time_ms=39 duration=39.240274ms size=93 referer="http://185.252.28.42:3000/d/SXv5Y0nSk/new-dashboard?orgId=1" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:58:13.03-0700 lvl=eror msg="library element could not be found" error="library element could not be found" remote_addr=89.165.117.168 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:58:13.03-0700 lvl=info msg="Request Completed" method=GET path="/api/library-elements/name/Panel Title" status=404 remote_addr=89.165.117.168 time_ms=10 duration=10.952551ms size=93 referer="http://185.252.28.42:3000/d/SXv5Y0nSk/new-dashboard?orgId=1" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:58:17.88-0700 lvl=eror msg="library element could not be found" error="library element could not be found" remote_addr=89.165.117.168 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:58:17.88-0700 lvl=info msg="Request Completed" method=GET path="/api/library-elements/name/Panel Title" status=404 remote_addr=89.165.117.168 time_ms=13 duration=13.204651ms size=93 referer="http://185.252.28.42:3000/d/SXv5Y0nSk/new-dashboard?orgId=1" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:58:17.9-0700 lvl=eror msg="library element could not be found" error="library element could not be found" remote_addr=89.165.117.168 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:58:17.9-0700 lvl=info msg="Request Completed" method=GET path="/api/library-elements/name/Panel Title" status=404 remote_addr=89.165.117.168 time_ms=2 duration=2.812385ms size=93 referer="http://185.252.28.42:3000/d/SXv5Y0nSk/new-dashboard?orgId=1" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T02:58:34.07-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.006136ms size=0 referer= traceID=00000000000000000000000000000000
+logger=server t=2023-10-23T03:03:15.94-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-23T03:03:15.95-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-23T03:04:05.19-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T03:04:05.19-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T03:04:05.19-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T03:04:05.19-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T03:04:05.19-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T03:04:05.19-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T03:04:05.19-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T03:04:05.19-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T03:04:05.2-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T03:04:05.27-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T03:04:05.3-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.961255ms
+logger=licensing t=2023-10-23T03:04:05.3-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T03:04:05.47-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T03:04:05.47-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T03:04:05.49-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T03:04:05.5-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-23T03:04:06.09-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T03:04:06.09-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-23T03:04:06.1-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:04:08.6-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.910674ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-23T03:04:08.65-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:04:11.58-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.58887ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:04:18.29-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=19 duration=19.889479ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:04:18.32-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.767553ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:04:19.43-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=16 duration=16.086149ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:05:12.43-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=625.192µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:09:48.76-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=2 duration=2.581389ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:16:04.13-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.297668ms size=0 referer= traceID=00000000000000000000000000000000
+logger=settings t=2023-10-23T03:20:59.9-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T03:20:59.9-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T03:20:59.9-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T03:20:59.9-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T03:20:59.9-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T03:20:59.9-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T03:20:59.9-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T03:20:59.9-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T03:20:59.91-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T03:21:00.08-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T03:21:00.11-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.437319ms
+logger=licensing t=2023-10-23T03:21:00.12-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T03:21:00.42-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T03:21:00.42-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T03:21:00.46-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T03:21:00.49-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-23T03:21:01.19-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T03:21:01.19-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-23T03:21:01.22-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:21:01.65-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=7 duration=7.825157ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-23T03:21:01.69-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:21:02.6-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.474048ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:21:08.4-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=3 duration=3.320005ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:21:36.26-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=34 duration=34.701518ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:21:36.3-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.775234ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:22:05.36-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.380581ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:22:50.8-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=12 duration=12.030459ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:23:12.02-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.287371ms size=0 referer= traceID=00000000000000000000000000000000
+logger=server t=2023-10-23T03:24:39.86-0700 lvl=info msg="Shutdown started" reason="System signal: terminated"
+logger=settings t=2023-10-23T03:25:28-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T03:25:28-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T03:25:28-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T03:25:28-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T03:25:28-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T03:25:28-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T03:25:28-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T03:25:28-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T03:25:28.01-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T03:25:28.14-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T03:25:28.15-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=1.297356ms
+logger=licensing t=2023-10-23T03:25:28.16-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T03:25:28.7-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T03:25:28.7-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T03:25:28.78-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T03:25:28.81-0700 lvl=info msg="Live Push Gateway initialization"
+logger=report t=2023-10-23T03:25:29.55-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=grafanaStorageLogger t=2023-10-23T03:25:29.55-0700 lvl=info msg="storage starting"
+logger=http.server t=2023-10-23T03:25:29.58-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:25:36.64-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=12 duration=12.323131ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-23T03:25:36.88-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:25:39.57-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=515.348µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:25:41.57-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=787.538µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:26:08.35-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=43 duration=43.85219ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:26:08.39-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.949374ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:26:34.61-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=13 duration=13.90366ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:26:34.64-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=861.041µs size=0 referer= traceID=00000000000000000000000000000000
+logger=settings t=2023-10-23T03:36:11.9-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T03:36:11.9-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T03:36:11.9-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T03:36:11.91-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T03:36:11.91-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T03:36:11.91-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T03:36:11.91-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T03:36:11.91-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T03:36:11.92-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T03:36:12.1-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T03:36:12.13-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=10.74357ms
+logger=licensing t=2023-10-23T03:36:12.13-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T03:36:12.37-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T03:36:12.37-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T03:36:12.42-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T03:36:12.46-0700 lvl=info msg="Live Push Gateway initialization"
+logger=http.server t=2023-10-23T03:36:13.1-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=grafanaStorageLogger t=2023-10-23T03:36:13.1-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T03:36:13.1-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:36:13.16-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=7 duration=7.798042ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-23T03:36:13.2-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:36:15.67-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=4 duration=4.790657ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:36:19.94-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.313663ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:36:21.58-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.435018ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:36:23.28-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=34 duration=34.715735ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:36:23.32-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.820124ms size=0 referer= traceID=00000000000000000000000000000000
+logger=server t=2023-10-23T03:36:29.31-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-23T03:36:29.31-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-23T03:38:26.76-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T03:38:26.76-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T03:38:26.76-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T03:38:26.76-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T03:38:26.76-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T03:38:26.76-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T03:38:26.76-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T03:38:26.76-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T03:38:26.77-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T03:38:26.8-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T03:38:26.82-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=4.789349ms
+logger=licensing t=2023-10-23T03:38:26.83-0700 lvl=info msg="Validated license token" appURL=http://localhost:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T03:38:26.91-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T03:38:26.91-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T03:38:26.92-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T03:38:26.94-0700 lvl=info msg="Live Push Gateway initialization"
+logger=http.server t=2023-10-23T03:38:27.67-0700 lvl=info msg="HTTP Server Listen" address=127.0.0.1:3000 protocol=http subUrl= socket=
+logger=grafanaStorageLogger t=2023-10-23T03:38:27.68-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T03:38:27.68-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=server t=2023-10-23T03:39:04.68-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-23T03:39:04.69-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-23T03:40:17.17-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-23T03:40:17.17-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-23T03:40:17.17-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-23T03:40:17.17-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-23T03:40:17.17-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-23T03:40:17.17-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-23T03:40:17.18-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-23T03:40:17.18-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-23T03:40:17.18-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-23T03:40:17.25-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-23T03:40:17.28-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.80886ms
+logger=licensing t=2023-10-23T03:40:17.29-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-23T03:40:17.37-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-23T03:40:17.37-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-23T03:40:17.39-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-23T03:40:17.4-0700 lvl=info msg="Live Push Gateway initialization"
+logger=http.server t=2023-10-23T03:40:18.03-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=grafanaStorageLogger t=2023-10-23T03:40:18.03-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-23T03:40:18.03-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:40:23.2-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=3 duration=3.686343ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-23T03:40:23.39-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:40:25.58-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.029158ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:40:26.59-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.105903ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:40:28.24-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.424554ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:40:34.41-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.684772ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-23T03:40:34.49-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=11 duration=11.37881ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:40:45.71-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=8 duration=8.165434ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-23T03:40:45.74-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.145729ms size=0 referer= traceID=00000000000000000000000000000000
+logger=settings t=2023-10-24T22:01:23.15-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-24T22:01:23.15-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-24T22:01:23.15-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-24T22:01:23.15-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-24T22:01:23.15-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-24T22:01:23.15-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-24T22:01:23.15-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-24T22:01:23.15-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-24T22:01:23.17-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-24T22:01:23.35-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-24T22:01:23.38-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.888561ms
+logger=licensing t=2023-10-24T22:01:23.39-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-24T22:01:23.94-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-24T22:01:23.94-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-24T22:01:24.01-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-24T22:01:24.05-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-24T22:01:24.88-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-24T22:01:24.88-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-24T22:01:24.92-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T22:01:32.66-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=4 duration=4.612501ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-24T22:01:32.85-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T22:01:48.04-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.374442ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T22:03:12.13-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.236981ms size=0 referer= traceID=00000000000000000000000000000000
+logger=server t=2023-10-24T22:07:39.72-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-24T22:07:39.72-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-24T22:34:01.79-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-24T22:34:01.79-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-24T22:34:01.79-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-24T22:34:01.79-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-24T22:34:01.79-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-24T22:34:01.79-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-24T22:34:01.79-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-24T22:34:01.79-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-24T22:34:01.79-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-24T22:34:01.86-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-24T22:34:01.87-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.724889ms
+logger=licensing t=2023-10-24T22:34:01.89-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-24T22:34:02.01-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-24T22:34:02.01-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-24T22:34:02.03-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-24T22:34:02.04-0700 lvl=info msg="Live Push Gateway initialization"
+logger=http.server t=2023-10-24T22:34:02.67-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=report t=2023-10-24T22:34:02.67-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=grafanaStorageLogger t=2023-10-24T22:34:02.67-0700 lvl=info msg="storage starting"
+logger=server t=2023-10-24T22:34:03.3-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-24T22:34:03.3-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-24T22:36:03.32-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-24T22:36:03.33-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-24T22:36:03.33-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-24T22:36:03.33-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-24T22:36:03.33-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-24T22:36:03.33-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-24T22:36:03.33-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-24T22:36:03.33-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-24T22:36:03.35-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-24T22:36:03.42-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-24T22:36:03.44-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.123285ms
+logger=licensing t=2023-10-24T22:36:03.44-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-24T22:36:03.58-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-24T22:36:03.58-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-24T22:36:03.59-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-24T22:36:03.61-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-24T22:36:04.4-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-24T22:36:04.4-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-24T22:36:04.41-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=server t=2023-10-24T22:36:04.65-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-24T22:36:04.65-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-24T22:40:56.88-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-24T22:40:56.89-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-24T22:40:56.89-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-24T22:40:56.89-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-24T22:40:56.89-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-24T22:40:56.89-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-24T22:40:56.89-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-24T22:40:56.89-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-24T22:40:56.89-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-24T22:40:56.97-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-24T22:40:57-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=1.984895ms
+logger=licensing t=2023-10-24T22:40:57.01-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-24T22:40:57.12-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-24T22:40:57.12-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-24T22:40:57.13-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-24T22:40:57.15-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-24T22:40:57.88-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-24T22:40:57.88-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-24T22:40:57.91-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T22:41:08.66-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=2 duration=2.052706ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-24T22:41:08.85-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=server t=2023-10-24T22:42:17.92-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-24T22:42:17.92-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-24T22:47:03.75-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-24T22:47:03.78-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-24T22:47:03.78-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-24T22:47:03.78-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-24T22:47:03.78-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-24T22:47:03.78-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-24T22:47:03.78-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-24T22:47:03.78-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-24T22:47:03.79-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-24T22:47:04-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-24T22:47:04.02-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.262053ms
+logger=licensing t=2023-10-24T22:47:04.03-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-24T22:47:04.72-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-24T22:47:04.73-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-24T22:47:04.8-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-24T22:47:04.84-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-24T22:47:05.65-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-24T22:47:05.65-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-24T22:47:05.69-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T22:47:09.63-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=3 duration=3.040476ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-24T22:47:09.86-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T22:47:54.95-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.368111ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T22:47:55.13-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.334395ms size=0 referer= traceID=00000000000000000000000000000000
+logger=server t=2023-10-24T23:00:11.79-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-24T23:00:11.79-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-24T23:00:18.62-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-24T23:00:18.62-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-24T23:00:18.62-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-24T23:00:18.62-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-24T23:00:18.62-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-24T23:00:18.62-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-24T23:00:18.62-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-24T23:00:18.62-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-24T23:00:18.62-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-24T23:00:18.66-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-24T23:00:18.67-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=1.359065ms
+logger=licensing t=2023-10-24T23:00:18.67-0700 lvl=info msg="Validated license token" appURL=https://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-24T23:00:18.74-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-24T23:00:18.74-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-24T23:00:18.75-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-24T23:00:18.76-0700 lvl=info msg="Live Push Gateway initialization"
+logger=server t=2023-10-24T23:00:19.37-0700 lvl=eror msg="Stopped background service" service=*api.HTTPServer reason="cert_file cannot be empty when using HTTPS"
+logger=grafanaStorageLogger t=2023-10-24T23:00:19.37-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-24T23:00:19.37-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=tracing t=2023-10-24T23:00:19.37-0700 lvl=info msg="Closing tracing"
+logger=server t=2023-10-24T23:00:19.76-0700 lvl=eror msg="Server shutdown" error="*api.HTTPServer run error: cert_file cannot be empty when using HTTPS"
+logger=settings t=2023-10-24T23:06:59.78-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-24T23:06:59.78-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-24T23:06:59.78-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-24T23:06:59.78-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-24T23:06:59.78-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-24T23:06:59.78-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-24T23:06:59.78-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-24T23:06:59.78-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-24T23:06:59.78-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-24T23:06:59.88-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-24T23:06:59.91-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.635741ms
+logger=licensing t=2023-10-24T23:06:59.92-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-24T23:07:00.05-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-24T23:07:00.05-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-24T23:07:00.06-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-24T23:07:00.08-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-24T23:07:00.7-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-24T23:07:00.71-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-24T23:07:00.71-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T23:07:01.83-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=1 duration=1.538893ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-24T23:07:02.03-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T23:07:41.03-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.061496ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T23:07:41.13-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.423271ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T23:18:59.97-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.582751ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T23:34:13.83-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.193591ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-24T23:47:17.65-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=4 duration=4.304187ms size=0 referer= traceID=00000000000000000000000000000000
+logger=server t=2023-10-24T23:54:19.14-0700 lvl=info msg="Shutdown started" reason="System signal: interrupt"
+logger=tracing t=2023-10-24T23:54:19.14-0700 lvl=info msg="Closing tracing"
+logger=settings t=2023-10-24T23:57:39.19-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-24T23:57:39.2-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-24T23:57:39.2-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-24T23:57:39.2-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-24T23:57:39.2-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-24T23:57:39.2-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-24T23:57:39.2-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-24T23:57:39.2-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-24T23:57:39.2-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-24T23:57:39.26-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-24T23:57:39.28-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.201306ms
+logger=licensing t=2023-10-24T23:57:39.28-0700 lvl=info msg="Validated license token" appURL=https://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-24T23:57:39.41-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-24T23:57:39.41-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-24T23:57:39.42-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-24T23:57:39.42-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-10-24T23:57:40.12-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-24T23:57:40.12-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-24T23:57:40.13-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=https subUrl= socket=
+logger=server t=2023-10-24T23:57:40.13-0700 lvl=eror msg="Stopped background service" service=*api.HTTPServer reason="tls: private key does not match public key"
+logger=tracing t=2023-10-24T23:57:40.13-0700 lvl=info msg="Closing tracing"
+logger=analytics.summaries t=2023-10-24T23:57:40.13-0700 lvl=eror msg="error during daily rollup" err="got error when acquiring lock: context canceled"
+logger=server t=2023-10-24T23:57:40.13-0700 lvl=eror msg="Server shutdown" error="*api.HTTPServer run error: tls: private key does not match public key"
+logger=settings t=2023-10-25T00:00:25.49-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-25T00:00:25.49-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-25T00:00:25.49-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-25T00:00:25.49-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-25T00:00:25.49-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-25T00:00:25.49-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-25T00:00:25.49-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-25T00:00:25.49-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-25T00:00:25.49-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-25T00:00:25.52-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-25T00:00:25.53-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=1.277703ms
+logger=licensing t=2023-10-25T00:00:25.54-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-25T00:00:25.6-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-25T00:00:25.6-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-25T00:00:25.61-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-25T00:00:25.62-0700 lvl=info msg="Live Push Gateway initialization"
+logger=http.server t=2023-10-25T00:00:26.17-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=grafanaStorageLogger t=2023-10-25T00:00:26.17-0700 lvl=info msg="storage starting"
+logger=report t=2023-10-25T00:00:26.17-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:00:40.57-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=3 duration=3.495042ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-25T00:00:40.74-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/SXv5Y0nSk address=grafana/dashboard/uid/SXv5Y0nSk
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:01:02.15-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.326627ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:03:51.62-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.010907ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:03:51.68-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.546178ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:05:26.88-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.15268ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:07:58.14-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.446909ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:11:06.2-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.191426ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-25T00:12:05.53-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.627236ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-25T00:14:06.7-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/pWV4-Y7Ik address=grafana/dashboard/uid/pWV4-Y7Ik
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:15:45.84-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.155708ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:28:24.28-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.519098ms size=0 referer= traceID=00000000000000000000000000000000
+logger=sqlstore t=2023-10-25T00:33:11.81-0700 lvl=eror msg="Failed getting data source" err="context canceled" uid= id=1 name= orgId=1
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-25T00:33:11.81-0700 lvl=eror msg="Query data error" error="context canceled" remote_addr=89.165.117.168 traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-25T00:33:11.81-0700 lvl=eror msg="Request Completed" method=POST path=/api/ds/query status=500 remote_addr=89.165.117.168 time_ms=5 duration=5.243238ms size=75 referer="http://185.252.28.42:3000/d/pWV4-Y7Ik/vnm-a01-01-003?orgId=1&from=now-3h&to=now&editPanel=3" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:34:21.27-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.811962ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:38:53.6-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.656342ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:40:22.65-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.773842ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:40:51.01-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.10333ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:41:04.42-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.391982ms size=0 referer= traceID=00000000000000000000000000000000
+logger=http.server t=2023-10-25T00:41:16.39-0700 lvl=info msg="Successful Login" User=admin@localhost
+logger=context traceID=00000000000000000000000000000000 userId=1 orgId=1 uname=admin t=2023-10-25T00:41:16.88-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.744076ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:56:59.56-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.579548ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:57:18.41-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.289964ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T00:59:13.88-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.672725ms size=0 referer= traceID=00000000000000000000000000000000
+logger=licensing t=2023-10-25T01:00:26.18-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=licensing.renewal t=2023-10-25T01:00:26.18-0700 lvl=warn msg="failed to load or validate token" err="license token file not found: /var/www/grafana/grafana-8.5.27/data/license.jwt"
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:00:32.65-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=4 duration=4.505663ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:00:58.48-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.588685ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:06:41.64-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.152899ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:07:33.22-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.052327ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:08:46.2-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.196686ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:24:11.48-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.326062ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:25:25.05-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.885766ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:25:43.33-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.315084ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:25:44.5-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.546104ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:25:45.65-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.313422ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:27:30.14-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.779691ms size=0 referer= traceID=00000000000000000000000000000000
+logger=tsdb.influx_flux t=2023-10-25T01:49:50.29-0700 lvl=warn msg="Flux query failed" err="Post \"http://185.252.28.58:8086/api/v2/query?org=angizeh\": context canceled" query="from(bucket: \"mqtt.angizehco.com\")\n  |> range(start: 2023-10-25T02:49:50.13Z, stop: 2023-10-25T08:49:50.13Z)\n  |> filter(fn: (r) => r[\"part_number\"] == \"VMN-A01-01-0003\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> filter(fn: (r) => r[\"_measurement\"] == \"LUX\")\n  |> filter(fn: (r) => r[\"gateway\"] == \"06\")\n  |> filter(fn: (r) => r[\"host\"] == \"mqtt.angizehco.com\")\n  |> aggregateWindow(every: 30s, fn: mean, createEmpty: false)\n  |> yield(name: \"mean\")"
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:49:50.29-0700 lvl=info msg="Request Completed" method=POST path=/api/ds/query status=400 remote_addr=89.165.117.168 time_ms=153 duration=153.689008ms size=767 referer="http://185.252.28.42:3000/d/pWV4-Y7Ik/vnm-a01-01-003?orgId=1&refresh=5s&kiosk=tv" traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:50:04.58-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=771.289µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:57:27.62-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=4 duration=4.954827ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T01:57:30.96-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.440884ms size=0 referer= traceID=00000000000000000000000000000000
+logger=licensing t=2023-10-25T02:00:26.18-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=licensing.renewal t=2023-10-25T02:00:26.18-0700 lvl=warn msg="failed to load or validate token" err="license token file not found: /var/www/grafana/grafana-8.5.27/data/license.jwt"
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:02:02.66-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=988.991µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:02:30.33-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.431212ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:03:48.48-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.702788ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:08:47.13-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.038504ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:08:52.29-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.27446ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:09:02.2-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.533555ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:09:08.77-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.366972ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:09:16.74-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.202158ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:09:30.67-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.132395ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:10:14.65-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.025735ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:10:18.98-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.736956ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:10:23.05-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.064469ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:10:28.08-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.090709ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:10:32.63-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.235565ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:10:36.9-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.319019ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:11:21.96-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.807499ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:11:26.97-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.177701ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:11:40.08-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.296467ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:13:00.45-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=998.04µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:13:24.97-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.84204ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:15:52.79-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.267727ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:17:28.58-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.320416ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:18:36.47-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.583041ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:18:48.68-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.648202ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:20:28.93-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.566494ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:21:03.87-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.335375ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:21:48.53-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.397032ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:22:14.99-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.259842ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:22:36.34-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.209051ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:22:57.56-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=916.322µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:23:23.23-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.812694ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:23:48.64-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.416553ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:24:29.82-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=932.583µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:25:22.49-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.340774ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:26:02.29-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.183543ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:27:08.17-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=994.621µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:27:24.1-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.011749ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:48:07.71-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.332542ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:48:18.42-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.251273ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:54:48.72-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=594.44µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T02:55:53.2-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.009692ms size=0 referer= traceID=00000000000000000000000000000000
+logger=licensing t=2023-10-25T03:00:26.19-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=licensing.renewal t=2023-10-25T03:00:26.19-0700 lvl=warn msg="failed to load or validate token" err="license token file not found: /var/www/grafana/grafana-8.5.27/data/license.jwt"
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:12:04.3-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.439656ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:18:47.38-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.069424ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:19:54.48-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.495644ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:20:18.97-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.397523ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:21:30.2-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.258599ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:22:02.13-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.522915ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:22:41.8-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.217102ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:28:33.48-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.332491ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:29:52.45-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.365015ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:36:33.01-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.15267ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:38:23.24-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.057889ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:40:09.16-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=932.009µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:42:59-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=930.374µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:44:24.97-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=997.39µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:44:56.05-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.245664ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:45:56.03-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.256999ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:47:34.77-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.095374ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:48:18.13-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.969751ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:53:46.67-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=2 duration=2.166242ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:54:07.58-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=0 duration=932.861µs size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:55:17.54-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.517758ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T03:55:25.19-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.162264ms size=0 referer= traceID=00000000000000000000000000000000
+logger=licensing t=2023-10-25T04:00:26.18-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=licensing.renewal t=2023-10-25T04:00:26.18-0700 lvl=warn msg="failed to load or validate token" err="license token file not found: /var/www/grafana/grafana-8.5.27/data/license.jwt"
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T04:00:51.25-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.113125ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T04:01:26.25-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.309423ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T04:01:47.44-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.283918ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T04:03:15.13-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.019793ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T04:04:41.01-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.02906ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T04:04:50.12-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.044788ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-25T04:06:32.3-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=3 duration=3.154586ms size=0 referer= traceID=00000000000000000000000000000000
+logger=settings t=2023-10-30T02:43:05.78-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-10-30T02:43:05.78-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-10-30T02:43:05.79-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-10-30T02:43:05.79-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-10-30T02:43:05.79-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-10-30T02:43:05.79-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-10-30T02:43:05.79-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-10-30T02:43:05.79-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-10-30T02:43:05.79-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-10-30T02:43:05.95-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-10-30T02:43:05.98-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.342492ms
+logger=licensing t=2023-10-30T02:43:05.99-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-10-30T02:43:06.58-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-10-30T02:43:06.58-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-10-30T02:43:06.63-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-10-30T02:43:06.66-0700 lvl=info msg="Live Push Gateway initialization"
+logger=report t=2023-10-30T02:43:07.39-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-10-30T02:43:07.4-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=grafanaStorageLogger t=2023-10-30T02:43:07.4-0700 lvl=info msg="storage starting"
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-30T02:43:09.23-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=17 duration=17.433709ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-10-30T02:43:09.42-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/pWV4-Y7Ik address=grafana/dashboard/uid/pWV4-Y7Ik
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-30T02:43:09.78-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=1 duration=1.21165ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-30T02:45:16.74-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=1 duration=1.049974ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-30T03:04:47.71-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=38.242.129.246 time_ms=2 duration=2.879415ms size=0 referer= traceID=00000000000000000000000000000000
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-10-30T03:35:49.36-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=91.235.234.150 time_ms=3 duration=3.785549ms size=0 referer= traceID=00000000000000000000000000000000
+logger=licensing t=2023-10-30T03:43:07.4-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=licensing.renewal t=2023-10-30T03:43:07.4-0700 lvl=warn msg="failed to load or validate token" err="license token file not found: /var/www/grafana/grafana-8.5.27/data/license.jwt"
+logger=settings t=2023-11-02T03:15:58.64-0700 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-11-02T03:15:58.66-0700 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-11-02T03:15:58.66-0700 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-11-02T03:15:58.66-0700 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-11-02T03:15:58.66-0700 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-11-02T03:15:58.66-0700 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-11-02T03:15:58.66-0700 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-11-02T03:15:58.66-0700 lvl=info msg="App mode production"
+logger=sqlstore t=2023-11-02T03:15:58.66-0700 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-11-02T03:15:58.83-0700 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-11-02T03:15:58.86-0700 lvl=info msg="migrations completed" performed=0 skipped=461 duration=2.686989ms
+logger=licensing t=2023-11-02T03:15:58.88-0700 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-11-02T03:15:59.44-0700 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-11-02T03:15:59.44-0700 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-11-02T03:15:59.49-0700 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-11-02T03:15:59.54-0700 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-11-02T03:16:00.28-0700 lvl=info msg="storage starting"
+logger=report t=2023-11-02T03:16:00.28-0700 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-11-02T03:16:00.3-0700 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+logger=context traceID=00000000000000000000000000000000 userId=0 orgId=1 uname= t=2023-11-02T03:16:00.46-0700 lvl=info msg="Request Completed" method=GET path=/api/live/ws status=0 remote_addr=89.165.117.168 time_ms=14 duration=14.990405ms size=0 referer= traceID=00000000000000000000000000000000
+logger=live t=2023-11-02T03:16:00.5-0700 lvl=info msg="Initialized channel handler" channel=grafana/dashboard/uid/pWV4-Y7Ik address=grafana/dashboard/uid/pWV4-Y7Ik
+logger=settings t=2023-11-20T01:19:57.07-0800 lvl=info msg="Starting Grafana" version=8.5.27 commit=5f9e0ace7e branch=HEAD compiled=2023-06-07T03:18:00-07:00
+logger=settings t=2023-11-20T01:19:57.1-0800 lvl=info msg="Config loaded from" file=/var/www/grafana/grafana-8.5.27/conf/defaults.ini
+logger=settings t=2023-11-20T01:19:57.1-0800 lvl=info msg="Path Home" path=/var/www/grafana/grafana-8.5.27
+logger=settings t=2023-11-20T01:19:57.1-0800 lvl=info msg="Path Data" path=/var/www/grafana/grafana-8.5.27/data
+logger=settings t=2023-11-20T01:19:57.1-0800 lvl=info msg="Path Logs" path=/var/www/grafana/grafana-8.5.27/data/log
+logger=settings t=2023-11-20T01:19:57.1-0800 lvl=info msg="Path Plugins" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=settings t=2023-11-20T01:19:57.1-0800 lvl=info msg="Path Provisioning" path=/var/www/grafana/grafana-8.5.27/conf/provisioning
+logger=settings t=2023-11-20T01:19:57.1-0800 lvl=info msg="App mode production"
+logger=sqlstore t=2023-11-20T01:19:57.11-0800 lvl=info msg="Connecting to DB" dbtype=sqlite3
+logger=migrator t=2023-11-20T01:19:57.26-0800 lvl=info msg="Starting DB migrations"
+logger=migrator t=2023-11-20T01:19:57.3-0800 lvl=info msg="migrations completed" performed=0 skipped=461 duration=1.425386ms
+logger=licensing t=2023-11-20T01:19:57.31-0800 lvl=info msg="Validated license token" appURL=http://0.0.0.0:3000/ source=disk status=NotFound
+logger=plugin.manager t=2023-11-20T01:19:57.82-0800 lvl=info msg="Plugin registered" pluginId=input
+logger=plugin.finder t=2023-11-20T01:19:57.82-0800 lvl=warn msg="Skipping finding plugins as directory does not exist" path=/var/www/grafana/grafana-8.5.27/data/plugins
+logger=query_data t=2023-11-20T01:19:57.87-0800 lvl=info msg="Query Service initialization"
+logger=live.push_http t=2023-11-20T01:19:57.95-0800 lvl=info msg="Live Push Gateway initialization"
+logger=grafanaStorageLogger t=2023-11-20T01:19:58.63-0800 lvl=info msg="storage starting"
+logger=report t=2023-11-20T01:19:58.63-0800 lvl=warn msg="Scheduling and sending of reports disabled, SMTP is not configured and enabled. Configure SMTP to enable."
+logger=http.server t=2023-11-20T01:19:58.66-0800 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
